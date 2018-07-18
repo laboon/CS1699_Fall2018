@@ -189,7 +189,6 @@ _Although the instructor will make a best effort to have the class topic on the 
 2. Societal Impacts _(discussion class - ATTENDANCE MANDATORY)_
    * DUE: Blockchain Impact Paper
 
-
 ## Week 15 (Week of 3 Dec):
 
 1. Overview of the Course and the Future of Blockchain Technology
