@@ -77,7 +77,7 @@ _Although the instructor will make a best effort to have the class topic on the 
    * Hot and cold storage
    * Sharing and splitting keys (multi-sig, threshold)
 
-2. Exchanges and Risks of Bitcoin  _(READING: BCT, Chapter 4.4 - 4.7)
+2. Exchanges and Risks of Bitcoin  _(READING: BCT, Chapter 4.4 - 4.7)_
    * What is an exchange?
    * Counterparty risk
    * Regulatory risk
@@ -178,16 +178,17 @@ _Although the instructor will make a best effort to have the class topic on the 
 
 ## Week 14 (Week of 26 Nov):
 
-1. Societal Impacts (discussion class)
-   * DUE: Blockchain Impact Paper
-
-2. Ethereum - the "World Computer"
+1. Ethereum - the "World Computer"
    * Blockchain with Turing-complete programming
    * Smart contract programming model
    * Solidity and the Ethereum Virtual Machine
    * ERC-20 tokens and ICOs
    * dapps
    * Specific examples, e.g. Golem, Storj, Augur, Cryptokitties
+
+2. Societal Impacts _(discussion class - ATTENDANCE MANDATORY)_
+   * DUE: Blockchain Impact Paper
+
 
 ## Week 15 (Week of 3 Dec):
 
