@@ -4,7 +4,7 @@ CS1699 Special Topics: Blockchain Technology and Cryptocurreny
 _Although the instructor will make a best effort to have the class topic on the day listed, occasionally a change must be made (e.g., a lecture going long, or a guest lecturer unable to make it to class that day).  However, these are the topics that will be covered and the expected date that they will be taught._
 
 
-Week 1 (Week of 27 AUG):
+## Week 1 (Week of 27 AUG):
 
 1. What is a blockchain?  What is cryptocurrency?
 
@@ -14,7 +14,7 @@ Week 1 (Week of 27 AUG):
    * How they were solved by Bitcoin
    * Basics of using Bitcoin (wallets, transactions)
 
-Week 2 (Week of 3 SEP):
+## Week 2 (Week of 3 SEP):
 
 1. Public-key cryptography _(READING: BCT, Chapter 1)_
    * How does it work?
@@ -26,7 +26,7 @@ Week 2 (Week of 3 SEP):
    * hiding
    * puzzle‐friendliness.
 
-Week 3 (Week of 10 SEP):
+## Week 3 (Week of 10 SEP):
 
 1. Blockchain and related data structures
    * Hash pointers
@@ -38,7 +38,7 @@ Week 3 (Week of 10 SEP):
    * Digital signatures
    * Public identities
 
-Week 4 (Week of 17 SEP):
+## Week 4 (Week of 17 SEP):
 
 1. Decentralization and Bitcoin _(READING: BCT, Chapter 2)_
    * Distributed Consensus protocol
@@ -53,7 +53,7 @@ Week 4 (Week of 17 SEP):
    * Bernoulli trials and Poisson process outcome
    * Transaction fees and block rewards
 
-Week 5 (Week of 24 SEP):
+## Week 5 (Week of 24 SEP):
 
 1. Mechanics of Bitcoin _(READING: BCT, Chapter 3 - 3.4)_
    * What makes up a transaction?
@@ -67,7 +67,7 @@ Week 5 (Week of 24 SEP):
    * Hard and soft forks
    * Limitations of the current Bitcoin network, and how to improve
 
-Week 6 (Week of 1 OCT):
+## Week 6 (Week of 1 OCT):
 
 1. MIDTERM 1
 
@@ -84,7 +84,7 @@ Week 6 (Week of 1 OCT):
    * Reserve risk
    * Quantum, SHA-256 weakness, or other "unforeseen" attack
 
-Week 7 (Week of 8 OCT):
+## Week 7 (Week of 8 OCT):
 
 1. Mining in-depth (Chapter 5)
    * Specifics on how mining works
@@ -99,7 +99,7 @@ Week 7 (Week of 8 OCT):
    * Taint analysis
    * Mixing
 
-Week 8 (Week of 15 OCT):
+## Week 8 (Week of 15 OCT):
 
 1. NO CLASS ON TUESDAY - HAPPY FALL BREAK
 
@@ -109,7 +109,7 @@ Week 8 (Week of 15 OCT):
    * Zerocoin and Zerocash
    * zk-SNARKs and the challenges of a trusted setup
 
-Week 9 (Week of 22 OCT):
+## Week 9 (Week of 22 OCT):
 
 1. Achieving Consensus _(READING: BCT, Chapter 7)_
    * Kinds of consensus: rules, history, value
@@ -121,7 +121,7 @@ Week 9 (Week of 22 OCT):
    * ASIC-resistant (not ASIC-proof) puzzles
    * Memory-hard puzzles (Scrypt)
 
-Week 10 (Week of 29 OCT):
+## Week 10 (Week of 29 OCT):
 
 1. More variations on a theme: Non-SHA256 Puzzles _(READING: BCT, Chapter 8.3 - 8.5)_
    * Proof-of-useful-work
@@ -136,7 +136,7 @@ Week 10 (Week of 29 OCT):
    * "Smart property" (colored coins)
    * Bitcoin as a source of randomness
 
-Week 11 (Week of 5 NOV):
+## Week 11 (Week of 5 NOV):
 
 1. MIDTERM 2
 
@@ -146,7 +146,7 @@ Week 11 (Week of 5 NOV):
    * Decentralized prediction markets
    * Contract settlement
 
-Week 12 (Week of 12 NOV):
+## Week 12 (Week of 12 NOV):
 
 1. Altcoins _(READING: BCT, Chapter 10 - 10.4)_
    * What is an altcoin?
@@ -161,7 +161,7 @@ Week 12 (Week of 12 NOV):
    * Monero - Anonymous, not pseudonymous, transactions
    * Nano - Distributed Proof of Stake, multiple blockchains
 
-Week 13 (Week of 19 NOV):
+## Week 13 (Week of 19 NOV):
 
 1. Atomic Swaps and Sidechains _(READING: BCT, Chapter 10.5 - 10.6)_
    * Cross-chain swap protocol
@@ -176,7 +176,7 @@ Week 13 (Week of 19 NOV):
    * Economic impact
    * Political impact
 
-Week 14 (Week of 26 Nov):
+## Week 14 (Week of 26 Nov):
 
 1. Societal Impacts (discussion class)
    * DUE: Blockchain Impact Paper
@@ -189,7 +189,7 @@ Week 14 (Week of 26 Nov):
    * dapps
    * Specific examples, e.g. Golem, Storj, Augur, Cryptokitties
 
-Week 15 (Week of 3 Dec):
+## Week 15 (Week of 3 Dec):
 
 1. Overview of the Course and the Future of Blockchain Technology
    * Recent changes and roadmap of Bitcoin (Segregated Witness a.k.a. SegWit, Bitcoin / Bitcoin Cash fork, Lightning Network)
