@@ -9,10 +9,10 @@ Week 1 (Week of 27 AUG):
 1. What is a blockchain?  What is cryptocurrency?
 
 2. High-level overview _(READING: BCT, Foreword)_
-  a. Short history of digital currency
-  b. Problems with previous implementations
-  c. How they were solved by Bitcoin
-  d. Basics of using Bitcoin (wallets, transactions)
+  * Short history of digital currency
+  * Problems with previous implementations
+  * How they were solved by Bitcoin
+  * Basics of using Bitcoin (wallets, transactions)
 
 Week 2 (Week of 3 SEP):
 
