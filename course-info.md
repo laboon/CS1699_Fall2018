@@ -22,9 +22,10 @@ IS 403
 
 **TA:**
 
-TBD
+TBD, GitHub username: `TBD`
 
 **Class GitHub repo:**
+
 https://www.github.com/laboon/CS1699_Fall2018
 
 **Required Text:**
@@ -33,15 +34,16 @@ https://www.github.com/laboon/CS1699_Fall2018
 
 ## Grading
 
-  * Projects (3) - 45%
-    * Project 1 - 15%
-    * Project 2 - 15%
-    * Project 3 - 15%
-  * Midterms (3): 45%
-    * Midterm 1 - 15%
-    * Midterm 2 - 15%
-    * Midterm 3 - 15%
+  * Projects (3) - 60%
+    * Project 1 - 20%
+    * Project 2 - 20%
+    * Project 3 - 20%
+  * Midterms (3): 30%
+    * Midterm 1 - 10%
+    * Midterm 2 - 10%
+    * Midterm 3 - 10%
   * Blockchain Impact Paper and Discussion - 10%
+
 
 Although lecture attendance is not mandatory (except for the in-class discussion day), it is strongly recommended that you come to class each for each lecture.  Material may be presented or covered in class that is not in the reading.  The world of cryptocurrency is rapidly changing and no book published in 2016 will have been able to predict the future!
 
@@ -64,7 +66,7 @@ Score  | Grade
 62.99-60.00  | D-
 59.99-0.00   | F
 
-All groups are expected to do their own work on the group project.  Projects may be analyzed with the Stanford _moss_ system to detect unauthorized collaboration between groups.
+All groups are expected to do their own work on group projects, and individuals are expected to do their own work on individual projects.  Projects may be analyzed with the Stanford _moss_ system to detect unauthorized collaboration between groups.
 
 It is recommended you keep all of your graded assignments until final grades are posted and accepted, in order to resolve any discrepancies in grading.
 
@@ -78,11 +80,13 @@ All software projects for this course will be written in the Java language (vers
 
 ## Participating in Class
 
-Under reasonable circumstances, it is almost always better to participate in class than not.  Questions and comments are invited and strongly encouraged!  However, this implies raising your hand and waiting to be called upon.  In dire circumstances, some waving of the hands in order to get the instructor's attention is allowed, but suboptimal.  Talking out of turn or while the instructor is speaking is generally frowned upon.  If it persists after a warning has been given, the instructor may ask any offending parties to leave the room to continue their discussion elsewhere.
+Under most circumstances, it is almost always better to participate in class than not.  Questions and comments are invited and strongly encouraged!  However, this implies raising your hand and waiting to be called upon.  In dire circumstances, some waving of the hands in order to get the instructor's attention is allowed, but suboptimal.  Talking out of turn or while the instructor is speaking is generally frowned upon.  If it persists after a warning has been given, the instructor may ask any offending parties to leave the room to continue their discussion or monologue elsewhere.
 
 ## Disability Services Statement
 
 The Office of Disability Resources and Services (DRS) provides a broad range of support services to assist students with disabilities. Services include, but are not limited to, tape-recorded textbooks, sign language interpreters, adaptive and transportation. Contact DRS at 412-648-7890 or 412-383-1355 (TTY) in 216 William Pitt Union or see www.drs.pitt.edu for more computer technology, Braille translation, and nonstandard exam arrangements, DRS can also assist students with accessibility to campus housing information.
+
+The instructor will work to the best of their ability to accommodate any issues arising from a disability that a student has, but he must be aware of it in order to accommodate it.  Please inform me as soon as possible if you have a disability which you think may hinder your success in the course and we (along with the DRS) should be able to work around it.
 
 ## Academic Integrity Statement
 

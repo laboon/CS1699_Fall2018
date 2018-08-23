@@ -3,7 +3,6 @@ CS1699 Special Topics: Blockchain Technology and Cryptocurreny
 
 _Although the instructor will make a best effort to have the class topic on the day listed, occasionally a change must be made (e.g., a lecture going long, or a guest lecturer unable to make it to class that day).  However, these are the topics that will be covered and the expected date that they will be taught._
 
-
 ## Week 1 (Week of 27 AUG):
 
 1. What is a blockchain?  What is cryptocurrency?
@@ -170,30 +169,25 @@ _Although the instructor will make a best effort to have the class topic on the 
    * Transfer contesting
    * PoW sampling via PoW skiplists
 
-2. Societal Impacts _(READING: BCT, Chapter 11)_
+2. NO CLASS - THANKSGIVING BREAK
+
+## Week 14 (Week of 26 Nov):
+
+1. Societal Impacts _(READING: BCT, Chapter 11)_
    * Decentralization of institutions
    * Blockchain interaction with the "real world"
    * Economic impact
    * Political impact
 
-## Week 14 (Week of 26 Nov):
-
-1. Ethereum - the "World Computer"
-   * Blockchain with Turing-complete programming
-   * Smart contract programming model
-   * Solidity and the Ethereum Virtual Machine
-   * ERC-20 tokens and ICOs
-   * dapps
-   * Specific examples, e.g. Golem, Storj, Augur, Cryptokitties
-
-2. Societal Impacts _(discussion class - ATTENDANCE MANDATORY)_
-   * DUE: Blockchain Impact Paper
+2. MIDTERM 3
 
 ## Week 15 (Week of 3 Dec):
 
 1. Overview of the Course and the Future of Blockchain Technology
    * Recent changes and roadmap of Bitcoin (Segregated Witness a.k.a. SegWit, Bitcoin / Bitcoin Cash fork, Lightning Network)
-   * Philosophy of Bitcoin
+   * The ethics of Bitcoin
+   * The economics of Bitcoin
    * Current political climate and its impact on cryptocurrency
 
-2. MIDTERM 3
+2. Societal Impacts _(discussion class - ATTENDANCE MANDATORY)_
+  * DUE: Blockchain Impact Paper
