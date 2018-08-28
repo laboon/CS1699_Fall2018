@@ -70,18 +70,15 @@ _Although the instructor will make a best effort to have the class topic on the 
 
 1. MIDTERM 1
 
-2. Using the Bitcoin network _(READING: BCT, Chapter 4 - 4.3)_
+2. Using the Bitcoin network _(READING: BCT, Chapter 4 - 4.7)_
    * What does it really mean to "own"/"have" some bitcoin?
    * Key management
    * Hot and cold storage
    * Sharing and splitting keys (multi-sig, threshold)
-
-2. Exchanges and Risks of Bitcoin  _(READING: BCT, Chapter 4.4 - 4.7)_
-   * What is an exchange?
-   * Counterparty risk
-   * Regulatory risk
-   * Reserve risk
-   * Quantum, SHA-256 weakness, or other "unforeseen" attack
+   * Exchanges and Risks of Bitcoin  _(READING: BCT, Chapter 4.4 - 4.7)_
+     * What is an exchange?
+     * Counterparty, regulatory, reserve risk
+     * Quantum, SHA-256 weakness, or other "unforeseen" attack
 
 ## Week 7 (Week of 8 OCT):
 
@@ -153,12 +150,13 @@ _Although the instructor will make a best effort to have the class topic on the 
    * Altcoin infanticide
    * Merge mining
 
-2. A Tour of Altcoins
+2. A Tour of Altcoins and Bitcoin Maximalism
    * Litecoin - "Silver to Bitcoin's Gold"
    * Dogecoin - Inflationary Bitcoin
    * Ethereum - More powerful scripting language
    * Monero - Anonymous, not pseudonymous, transactions
    * Nano - Distributed Proof of Stake, multiple blockchains
+   * What is Bitcoin Maximalism? (Strong, Semi-Strong, Weak forms)
 
 ## Week 13 (Week of 19 NOV):
 
@@ -173,21 +171,21 @@ _Although the instructor will make a best effort to have the class topic on the 
 
 ## Week 14 (Week of 26 Nov):
 
-1. Societal Impacts _(READING: BCT, Chapter 11)_
-   * Decentralization of institutions
-   * Blockchain interaction with the "real world"
-   * Economic impact
-   * Political impact
-
-2. MIDTERM 3
-
-## Week 15 (Week of 3 Dec):
-
 1. Overview of the Course and the Future of Blockchain Technology
    * Recent changes and roadmap of Bitcoin (Segregated Witness a.k.a. SegWit, Bitcoin / Bitcoin Cash fork, Lightning Network)
    * The ethics of Bitcoin
    * The economics of Bitcoin
    * Current political climate and its impact on cryptocurrency
+
+2. MIDTERM 3
+
+## Week 15 (Week of 3 Dec):
+
+1. Societal Impacts _(READING: BCT, Chapter 11)_
+   * Decentralization of institutions
+   * Blockchain interaction with the "real world"
+   * Economic impact
+   * Political impact
 
 2. Societal Impacts _(discussion class - ATTENDANCE MANDATORY)_
   * DUE: Blockchain Impact Paper
