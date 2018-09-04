@@ -9,7 +9,7 @@ This course covers the fundamentals of blockchain technology, focusing on, but n
 **Instructor's Office Hours:**
 
   * SENSQ 6305
-  * Wednesday 1:30 PM - 3:00 PM and Friday 9:00 AM - 10:30 AM
+  * Wednesday 1:00 PM - 2:30 PM and Friday 9:00 AM - 10:30 AM
   * ... or by appointment
 
 **Class Time:**
