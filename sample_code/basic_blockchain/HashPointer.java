@@ -25,7 +25,6 @@ public class HashPointer {
 
     private static String convertBytesToHexString(byte[] bytes) {
 	StringBuffer toReturn = new StringBuffer();
-	System.out.println(bytes.length);
 	for (int j = 0; j < bytes.length; j++) {
 	    String hexit = String.format("%02x", bytes[j]);
 	    toReturn.append(hexit);
@@ -87,6 +86,10 @@ public class HashPointer {
      */
 
     public boolean referenceValid() {
+	// null should always equal special hash "0"
+	if (_reference == null && _hash == "0") {
+	    return true;
+	}
 	return _hash.equals(calculateHash(_reference));
     }
 
