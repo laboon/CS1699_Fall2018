@@ -3,7 +3,18 @@ public class Blockchain {
 
     private HashPointer _head = null;
 
-    public void addBlock(String data) {
+    /**
+     * Generates a block and adds it to the end of the blockchain.
+     * NOTE: Ordinarily we would need to have a direct reference
+     * to the generated block.  We should only reference blocks
+     * via HashPointer.  I am including it so that I can
+     * directly modify it later and show what happens when a HashPointer
+     * is invalid..
+     * @param data - The data to be added to the block
+     * @return A direct reference to the generated block
+     */
+
+    public Block addBlock(String data) {
 	Block b = null;
 	if (_head == null) {
 	    b = new Block(null, data);
@@ -12,6 +23,7 @@ public class Blockchain {
 	}
 
 	_head = new HashPointer(b);
+	return b;
     }
 
     public boolean iterateAndVerify() {
@@ -29,8 +41,7 @@ public class Blockchain {
 
 	    }
 	} catch (InvalidHashException ihex) {
-	    System.out.println("Invalid hash on block containing data:");
-	    System.out.println(_current.getDataAsString());
+	    System.out.println(ihex);
 	    return false;
 	}
 	// We have iterated through the entire blockchain without an error, thus

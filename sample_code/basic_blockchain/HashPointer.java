@@ -85,12 +85,18 @@ public class HashPointer {
      * @return boolean - true if valid, false if not
      */
 
-    public boolean referenceValid() {
+    public boolean referenceValid() throws InvalidHashException {
 	// null should always equal special hash "0"
 	if (_reference == null && _hash == "0") {
 	    return true;
 	}
-	return _hash.equals(calculateHash(_reference));
+
+	String calculatedHash = calculateHash(_reference);
+	if (_hash.equals(calculatedHash)) {
+	    return true;
+	} else {
+	    throw new InvalidHashException(_hash, calculatedHash);
+	}
     }
 
     /**
