@@ -29,7 +29,6 @@ public class HashPointerDemo {
 	System.out.println("Hash of data in Jane account = " +
 			   HashPointer.calculateHash(janeAccount));
 
-
 	// Now we are going to be sneaky and modify the underlying data in Jill's
 	// account, and hope that the pointer which points to it will not notice
 	// Obviously this is a hopeless endeavor!
