@@ -26,7 +26,7 @@ public class HashPointer {
     private static String convertBytesToHexString(byte[] bytes) {
 	StringBuffer toReturn = new StringBuffer();
 	for (int j = 0; j < bytes.length; j++) {
-	    String hexit = String.format("%02x", bytes[j]); // Integer.toHexString(hash[j]);
+	    String hexit = String.format("%02x", bytes[j]);
 	    toReturn.append(hexit);
 	}
 	return toReturn.toString();
