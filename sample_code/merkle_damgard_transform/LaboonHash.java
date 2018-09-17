@@ -8,7 +8,7 @@
  */
 
 import java.util.Arrays;
-import java.util.Math;
+import java.lang.Math;
 
 public class LaboonHash {
 
@@ -90,7 +90,7 @@ public class LaboonHash {
      */
     public static String pad(String s, int len) {
 	int sizeToPad = BLOCK_SIZE - s.length();
-	int modValue = Math.pow(10, sizeToPad);
+	int modValue = (int) Math.pow(10, sizeToPad);
 	int moddedLen = len % modValue;
 	String padded = String.format("%0" + sizeToPad + "d", moddedLen);
 	return padded;
