@@ -88,6 +88,7 @@ public class LaboonHash {
      * @param len length of original string
      * @return String padded version of block
      */
+
     public static String pad(String s, int len) {
 	int sizeToPad = BLOCK_SIZE - s.length();
 	int modValue = (int) Math.pow(10, sizeToPad);
@@ -98,6 +99,9 @@ public class LaboonHash {
 
     /**
      * Pad the final block of the array if necessary.
+     * Necessary when the final block size is less than BLOCK_SIZE.
+     * All other blocks besides the last one are guaranteed to be BLOCK_SIZE
+     * bytes long, so this is the only one to check.
      * @see pad() method for algorithm
      * @param String[] initial blocks
      * @return String[] padded (if necessary)
@@ -151,12 +155,24 @@ public class LaboonHash {
 	return toReturn;
     }
 
+    /**
+     * Given some string s,
+     * 1. Split into blocks of size BLOCK_SIZE
+     * 2. Merkle-Damgard strengthen (i.e., pad w/ len of string) final block
+     *    if necessary
+     * 3. Convert String blocks (in String[]) to byte blocks (byte[][])
+     * There is also additional debug info which can be commented/uncommented to
+     * follow along in the process.
+     * @param s String to convert
+     * @return byte[][] s converted to byte blocks
+     */
+
     public static byte[][] stringToByteBlocks(String s) {
 	int origLength = s.length();
 	String[] stringBlocks = splitBlocks(s);
 	stringBlocks = strengthenIfNecessary(origLength, stringBlocks);
 
-	// Uncomment to see string blocks
+	// Display string blocks
 	System.out.println("String Blocks:");
 	for (String block : stringBlocks) {
 	    System.out.println(block);
@@ -164,7 +180,7 @@ public class LaboonHash {
 
 	byte[][] toReturn = stringBlocksToByteBlocks(stringBlocks);
 
-	// Uncomment to see byte blocks
+	// Display byte blocks
 	System.out.println("Byte Blocks:");
 	for (byte[] b : toReturn) {
 	    System.out.println(convertBytesToHexString(b));
@@ -172,6 +188,19 @@ public class LaboonHash {
 
 	return toReturn;
     }
+
+    /**
+     * Given two byte arrays a1 and a2, concatenate together so that
+     * they form a new array of length a1.length + a2.length with
+     * all of the values in a1 in the front of the array and a2 in the
+     * back.
+     * Example: a1 = [0, 1, 2]
+     *          a2 = [3, 4]
+     *          Returns new array [0, 1, 2, 3, 4]
+     * @param a1 first array to concatenate
+     * @param a2 second array to concatenate
+     * @return byte[] concatenated array
+     */
 
     public static byte[] concatArrays(byte[] a1, byte[] a2) {
 	int len1 = a1.length;
@@ -188,22 +217,49 @@ public class LaboonHash {
 
     }
 
+    /**
+     * Compression function (labeled c in diagrams in book)
+     * Given two byte arrays - a previous result and a block -
+     * apply the following function:
+     * 1. Concatenate result and block into a single byte array
+     * 2. Generate a new two-byte (16-bit) result block w/ initial values
+     * 3. For each byte b in the concatenated array:
+     *    a. result[0] = (prevResult1 xor b) + b
+     *    b. result[1] = (prevResult0 xor b) - b
+     * 4. Return final result array
+     * @param oldResult - the result being passed into this compression function
+     * @param block - the block being passed into this compression function
+     * @return byte[] - new result
+     */
+
     public static byte[] compress(byte[] oldResult, byte[] block) {
 	byte[] combined = concatArrays(oldResult, block);
 	byte[] result = { 65, 63 };
 	for (byte b : combined) {
+	    // Have to store this since it will be modified by the
+	    // line right after it
+	    byte origResult0 = result[0];
 	    result[0] = (byte) ((byte) (result[1] ^ b) + (byte) b);
-	    result[1] = (byte) ((byte) (result[0] ^ b) - (byte) b);
+	    result[1] = (byte) ((byte) (origResult0 ^ b) - (byte) b);
 	}
 	return result;
 
     }
 
+    /**
+     * Run entire LaboonHash compression function on all blocks.
+     * This enumerates through all blocks and is thus valid for
+     * any size input - see the section in the textbook on Merkle-Damgard
+     * transforms for more information.
+     * @param byteBlocks - bytes to run compression function on
+     * @return byte[] - cryptographic hash of bytes
+     */
+
     public static byte[] compressAll(byte[][] byteBlocks) {
 	byte[] result = INITIAL_VALUE;
 	int numRounds = 0;
 	for (byte[] b : byteBlocks) {
-	    System.out.print("Round + " + numRounds++ + ": prev res = "
+	    System.out.print("Round " + numRounds++ + ": prev res = "
 			     + convertBytesToHexString(result)
 			     + ", block = " + convertBytesToHexString(b)
 			     + " --> ");
@@ -214,6 +270,11 @@ public class LaboonHash {
 
     }
 
+    /**
+     * Given a string, return its LaboonHash in bytes.
+     * @param toHash - string to hash
+     * @return byte[] - LaboonHash digest of string
+     */
     public static byte[] laboonHash(String toHash) {
 	byte[][] blocks = stringToByteBlocks(toHash);
 	byte[] toReturn = compressAll(blocks);
