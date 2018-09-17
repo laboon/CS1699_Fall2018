@@ -3,12 +3,12 @@
  * Merkle-Damgard transforms and Merkle-Damgard strengthening.
  * Blocks are eight bytes and output is two bytes (16 bit).
  * Final blocks are strengthened (padded), if necessary, by length
- * of original string, modulo (2^8 * num_characters_to_pad).
+ * of original string, modulo (10 ^ num_characters_to_pad).
  * Initialization value = AACC
  */
 
-import java.util.Arrays;
 import java.lang.Math;
+import java.util.Arrays;
 
 public class LaboonHash {
 
