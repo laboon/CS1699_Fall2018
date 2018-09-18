@@ -15,6 +15,9 @@ public class Sign {
 	}
 	try {
 	    String sig = PublicKeyDemo.signMessage(args[0], args[1]);
+	    System.out.println("Message:");
+	    System.out.println(arg[0]);
+	    System.out.println("Signature:");
 	    System.out.println(sig);
 	} catch (Exception ex) {
 	    System.err.println("Exception: " + ex);
