@@ -17,7 +17,7 @@ public class PublicKeyDemo {
      * @return String hex string version of byte array
      */
 
-    private static String convertBytesToHexString(byte[] bytes) {
+    public static String convertBytesToHexString(byte[] bytes) {
 	StringBuffer toReturn = new StringBuffer();
 	for (int j = 0; j < bytes.length; j++) {
 	    String hexit = String.format("%02x", bytes[j]);
@@ -26,16 +26,96 @@ public class PublicKeyDemo {
 	return toReturn.toString();
     }
 
+
+    /**
+     * Given some arbitrary hex string, convert it to a byte array.
+     * Example: "FFA001" -> [0xFF, 0xA0, 0x01]
+     * NOTE: Assumes that hex string is valid (i.e., even length)
+     * @param hex arbitrary-length hex string
+     * @return byte[] byte array version of hex string
+     */
+
+    public static byte[] convertHexToBytes(String hex) {
+	byte[] bytes = new byte[hex.length() / 2];
+	int c = 0;
+	for (int j = 0; j < hex.length(); j += 2) {
+	    String twoHex = hex.substring(j, j + 2);
+	    byte byteVal = (byte) Integer.parseInt(twoHex, 16);
+	    bytes[c++] = byteVal;
+	}
+	return bytes;
+    }
+
+
     /**
      * Generates a public/private key pair.
      * @return KeyPair - Public/private key pair
      */
 
-    private static KeyPair getKeyPair() throws Exception {
+    public static KeyPair getKeyPair() throws Exception {
 	KeyPairGenerator keyGen = KeyPairGenerator.getInstance("DSA", "SUN");
 	SecureRandom random = new SecureRandom(); // .getInstance("SHA1PRNG", "SUN");
 	keyGen.initialize(1024, random);
 	return keyGen.generateKeyPair();
+    }
+
+    /**
+     * Generate a public key in bytes given a hex string.
+     * We can then store hex strings as our public key instead of raw bytes.
+     * @param stored - Public key in hex
+     * @return PublicKey - a usable PublicKey object
+     */
+
+    public static PublicKey loadPublicKey(String stored) throws Exception {
+    	byte[] data = convertHexToBytes(stored);
+    	X509EncodedKeySpec spec = new X509EncodedKeySpec(data);
+    	KeyFactory fact = KeyFactory.getInstance("DSA");
+    	return fact.generatePublic(spec);
+    }
+
+    /**
+     * Generate private key in bytes given a hex string.
+     * We can then store hex strings as our private key instead of raw bytes.
+     * @param stored - Private key in hex
+     * @return PrivateKey - a usable PrivateKey object
+     */
+
+    public static PrivateKey loadPrivateKey(String stored) throws Exception {
+	byte[] data = convertHexToBytes(stored);
+    	KeyFactory keyFactory=KeyFactory.getInstance("DSA");
+	PrivateKey privKey=keyFactory.generatePrivate(new PKCS8EncodedKeySpec(data));
+	return privKey;
+    }
+
+    /**
+     * Sign a message using a String version of the msg and key.
+     * Will be useful for command-line tools!
+     * @param msg - The message to sign
+     * @param key - The secret key to sign it with (hex string)
+     * @return String signature of the message
+     */
+
+    public static String signMessage(String msg, String key) throws Exception {
+	PrivateKey sk = loadPrivateKey(key);
+	byte[] sigBytes = sign(msg, sk);
+	String toReturn = convertBytesToHexString(sigBytes);
+	return toReturn;
+    }
+
+    /**
+     * Verify a message using a String version of the msg, signature and key.
+     * Will be useful for command-line tools!
+     * @param msg - The message
+     * @param sig - The signature (hex string)
+     * @param key - The public key of the original signer (hex string)
+     * @return Boolean - true if valid, false if not
+     */
+
+    public static boolean verifyMessage(String msg, String sig, String key) throws Exception {
+	PublicKey pk = loadPublicKey(key);
+	byte[] sigBytes = convertHexToBytes(sig);
+	boolean toReturn = verify(msg, sigBytes, pk);
+	return toReturn;
     }
 
     /**
@@ -46,7 +126,7 @@ public class PublicKeyDemo {
      * @return byte[] signature of string signed with sk
      */
 
-    private static byte[ ] sign(String toSign, PrivateKey sk) throws Exception {
+    public static byte[] sign(String toSign, PrivateKey sk) throws Exception {
 	Signature dsa = Signature.getInstance("SHA1withDSA", "SUN");
 	dsa.initSign(sk);
 
@@ -65,7 +145,7 @@ public class PublicKeyDemo {
      * @return boolean - true if valid, false otherwise
      */
 
-    private static boolean verify(String toCheck, byte[] sig, PublicKey pk)
+    public static boolean verify(String toCheck, byte[] sig, PublicKey pk)
 	throws Exception {
 	    Signature sig2 = Signature.getInstance("SHA1withDSA", "SUN");
 	    byte[] bytes = toCheck.getBytes();
