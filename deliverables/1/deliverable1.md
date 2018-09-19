@@ -63,10 +63,11 @@ This should be sorted by coin ID alphabetically.
 
 ## Tips
 
-1. Be sure to read in data as plain ASCII, not UTF-8 (e.g., use string.getBytes())
+1. Be sure to read in data as plain ASCII, not UTF-8 (i.e., use `string.getBytes()`)
 2. I recommend you use the newly-added `/hash/Sha256Hash.java`, `/public_key_crypto/Sign.java`, and `/public_key_crypto/Verify.java` files to test your code, hashes, signing, verifying, reading, etc.  Note that you may have to adjust output size!
 3. I wrote up much of the sample code to help you - use it!
 4. I recommend that Work on getting the happy path (i.e. `test_blockchain.txt` which has no errors) to work, and just throw an exception if you hit a problem.  Then go back and ensure that you handle errors appropriately.
+5. Note that keys will often look similar (starting with `3081f...`) because each key consists of everyything you need to re-generate it including internal settings of the cryptographic functions.  When comparing keys, I recommend you look at the last few (say, 4) hexits (hexadecimal digits).
 
 ## Public/Secret Keys
 
