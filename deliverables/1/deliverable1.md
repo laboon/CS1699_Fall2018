@@ -22,7 +22,7 @@ You will need to have an account on GitHub and be able to create private reposit
 Please hand in a printed-out (hardcopy) cover page with:
 * The name of the project ("CS1699 Deliverable 1: StringCoin")
 * Your name
-* Your GitHub usernames
+* Your GitHub username
 * A link to your private repository on GitHub with the Java files
 
 ### Compiling StringCoin
