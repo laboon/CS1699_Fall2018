@@ -2,7 +2,7 @@
 
 **ASSIGNED: September 18, 2018 ... DUE: October 4, 2018**
 
-For the first deliverable, we are going to create a variation on ScroogeCoin called StringCoin.  Like ScroogeCoin, this is a centralized blockchain - Bill is the source of all coins.  ANY user can add a block as long as it is valid
+For the first deliverable, we are going to create a variation on ScroogeCoin called StringCoin.  Like ScroogeCoin, this is a centralized blockchain - Bill is the source of all coins.  However, ANY user can add a block as long as it is valid.
 
 You will read in the blockchain file, generate a blockchain, determine if it is valid, and print out all coins generated and who owns them.
 
@@ -22,11 +22,13 @@ Hashes of the previous line use SHA-256 and thus are 256 bits.
 
 All newly created coins start in the Bill account (public and secret keys below).
 
-The specific formats are:
+There are two types of blocks, `CREATE` and `TRANSFER`, each of which have slightly different formats.  The specific formats are:
 
+```
 PREV,CREATE,COIN,COINSIG,SIG
-PREV,TRANSFER,COIN,PK,SIG
 
+PREV,TRANSFER,COIN,PK,SIG
+```
 PREV represents a SHA-256 of the entire previous line, excluding carriage returns, or "0" if this is the genesis block in the blockchain (i.e. no blocks are before it).  The input include commas.  For example, the second line in `test_blockchain.txt` has the previous hash `76ec8f7d80cd4885ac32690e9665bd4a60b20d4643ca077ac44f459c8d23953d`.  This is the SHA-256 hash of the entire first line:
 ```
 0,CREATE,0000,302c021438f0d799617ce8df63fa9ce19933d6f0c0aa571402142a5ec931ed5869db154780d25a5282217a673f93,302d0215008d9a0e258486cf11f5e55ca0396bb61ff8d569c402147a09c9a7e63f225278d5b8262ce29a3e278a7c72
