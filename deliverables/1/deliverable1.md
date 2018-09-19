@@ -1,6 +1,6 @@
 # CS1699 Deliverable 1: StringCoin
 
-**ASSIGNED: September 18, 2018 ... DUE: October 4, 2018**
+**ASSIGNED: September 18, 2018 ... DUE: October 4, 2018 (Late: October 9, 2018 / -20 points) **
 
 For the first deliverable, we are going to create a variation on ScroogeCoin called StringCoin.  Like ScroogeCoin, this is a centralized blockchain - Bill is the source of all coins.  However, ANY user can add a block as long as it is valid.
 
@@ -68,6 +68,21 @@ This should be sorted by coin ID alphabetically.
 3. I wrote up much of the sample code to help you - use it!
 4. I recommend that Work on getting the happy path (i.e. `test_blockchain.txt` which has no errors) to work, and just throw an exception if you hit a problem.  Then go back and ensure that you handle errors appropriately.
 5. Note that keys will often look similar (starting with `3081f...`) because each key consists of everyything you need to re-generate it including internal settings of the cryptographic functions.  When comparing keys, I recommend you look at the last few (say, 4) hexits (hexadecimal digits).
+
+## Turning the Assignment In
+
+You will turn in a sheet to me (see Format, below) and create your code and upload it to a repository on GitHub.
+
+The repository you create should be private.  Usernames `laboon` (the instructor) and `TBD` (the TA) should be added as collaborators.  The code should be entirely on the master branch.  Aside from the code, the only files in the repository should be the optional `README.md` file and .gitignore files.  There should be no IDE files lying around and I should be able to compile the program with a simple `javac *.java`.  Do not turn in an assignment where I will have to modify the classpath, include .jar files or other libraries, etc. Do not turn in an assignment using Gradle, ant or other build control system.
+
+You will need to have an account on GitHub and be able to create private repositories.  If you cannot create a private repository on GitHub, please sign up for a Student Developer Pack at https://education.github.com/.  The Student Developer Pack is free and will give you the ability to create private repositories as well as other benefits.
+
+### Format
+Please hand in a printed-out (hardcopy) cover page with:
+* The name of the project ("CS1699 Deliverable 1: StringCoin")
+* Your name
+* Your GitHub usernames
+* A link to your private repository on GitHub with the Java files
 
 ## Public/Secret Keys
 
@@ -138,3 +153,7 @@ InvalidDataException: Invalid line 76ec8f7d80cd4885ac32690e9665bd4a60b20d4643ca0
 Caught exception InvalidDataException: Invalid line 76ec8f7d80cd4885ac32690e9665bd4a60b20d4643ca077ac44f459c8d23953d,CREATE,0001,302c02147db1925ee26abc8675aaf2aa47da437e8bc4f2e00214484c7f49c40a94935d0606cf9f8a6eaf0a0a6401
 Quitting..
 ```
+
+Note - other things can go wrong (coins being moved that were never generated, invalidly signed coin creation, etc.)!  Be sure that in these other cases, the program shuts down and does not show who owns what coins.
+
+As always, feel free to email me or come to office hours with any questions.
