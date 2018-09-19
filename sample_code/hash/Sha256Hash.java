@@ -25,8 +25,7 @@ public class Sha256Hash {
     }
 
     /**
-     * Given some string, determine a string representation of it
-     * return the SHA256 hash of it.
+     * Given some string, return the SHA256 hash of it.
      * @param x Arbitrary string
      * @return String Hex version of the hash of that object's data
      */
