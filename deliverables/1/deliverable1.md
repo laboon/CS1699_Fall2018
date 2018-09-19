@@ -4,11 +4,15 @@
 
 For the first deliverable, we are going to create a variation on ScroogeCoin called StringCoin.  Like ScroogeCoin, this is a centralized blockchain - Bill is the source of all coins.  However, ANY user can add a block as long as it is valid.
 
-You will read in the blockchain file, generate a blockchain, determine if it is valid, and print out all coins generated and who owns them.
+You will read in the blockchain file, determine if it is a valid StringCoin blockchain, and if so, print out all coins generated and who owns them.
 
 All coins are named using string representations of four-hexit hexadecimal numbers (e.g., 0001, a873, 091b, etc.)
 
 You may use any of the sample code provided in the repository for this project (and I recommend you do, instead of re-inventing the wheel).
+
+## Running StringCoin
+
+I should be able run StringCoin by typing `java StringCoin *blockchain_file_name*` where `*blockchain_file_name*` is a file following the StringCoin blockchain format.  See sample output, below, for examples.
 
 ## StringCoin blockchain format
 
@@ -16,7 +20,7 @@ Lines represent a single block in the StringCoin blockchain.  Each block consist
 
 Every line starts with a hash of the entire previous line.
 
-Public keys (addresses) and private keys are 256 bits using DSA with the default SUN provider (i.e., `KeyPairGenerator.getInstance("DSA", "SUN")` and `keyGen.initialize(256, random)`).  Message signatures are use SHA-1 w/DSA (i.e., `Signature.getInstance("SHA1withDSA", "SUN");`).
+Public keys (addresses) and private keys are 256 bits using DSA with the default SUN provider (i.e., `KeyPairGenerator.getInstance("DSA", "SUN")` and `keyGen.initialize(256, random)`).  Message signatures are SHA-1 w/DSA (i.e., `Signature.getInstance("SHA1withDSA", "SUN");`).
 
 Hashes of the previous line use SHA-256 and thus are 256 bits.
 
@@ -89,6 +93,8 @@ Private key (sk): 3081c60201003081a806072a8648ce38040130819c024100fca682ce8e12ca
 ## Sample Output
 
 Good blockchain (`test_blockchain.txt`) - Coins 0000 and 0004 belong to Peach, Coin 0001 belongs to Mario, Coins 0002 and 0003 belong to Bill.
+
+We can see that Bill first created five coins: 0000, 0001, 0002, 0003, and 0004 (blocks 0 - 4, lines 1 - 5 in the file).  Bill then gave coin 0000 to Mario in block 5 / line 6.  Mario then passed that coin to Peach in block 6 / line 7.  Bill then gave coin 0001 to Peach in block 7 / line 8.  Peach gave coin 0001 to Mario in block 8 / line 9.  Finally, in block 9 / line 10, Bill gives an additional coin, 0004, to Peach.
 
 ```
 (24270) $ java StringCoin test_blockchain.txt
