@@ -95,7 +95,7 @@ This should be sorted by coin ID alphabetically.
 
 ## Public/Secret Keys
 
-_Note: These are the public/private keys used in the sample blockchain files.  However, they are not the ONLY possible public/private keypairs!  You may create your own for testing purposes and the files that will be graded may contain other keypairs other than these.  Your program should as long as the key pairs are valid!_
+_Note: These are the public/private keys used in the sample blockchain files.  However, they are not the ONLY possible public/private keypairs!  You may create your own for testing purposes and the files that will be graded may contain other keypairs other than these.  Your program should as function as long as the key pairs are valid!_
 
 ```
 Bill (Creator of all coins):
