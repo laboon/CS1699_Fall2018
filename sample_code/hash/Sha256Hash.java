@@ -2,6 +2,7 @@
 // which contains the algorithm itself, but the ancillary class StandardCharsets and
 // NoSuchAlgorithmException for feeding in data and running it
 
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -15,7 +16,7 @@ public class Sha256Hash {
      * @return String hex string version of byte array
      */
 
-    private static String convertBytesToHexString(byte[] bytes) {
+    public static String convertBytesToHexString(byte[] bytes) {
 	StringBuffer toReturn = new StringBuffer();
 	for (int j = 0; j < bytes.length; j++) {
 	    String hexit = String.format("%02x", bytes[j]);
@@ -25,7 +26,7 @@ public class Sha256Hash {
     }
 
     /**
-     * Given some string, return the SHA256 hash of it.
+     * Given some string, return the SHA256 hash of it in bytes.
      * @param x Arbitrary string
      * @return String Hex version of the hash of that object's data
      */
@@ -47,22 +48,9 @@ public class Sha256Hash {
 
     }
 
-    public static void main(String[] args) {
-	if (args.length != 1) {
-	    System.err.println("Usage: java Sha256Hash *msg*");
-	    System.exit(1);
-	}
-	try {
-	    String msg = args[0];
-	    System.out.println("Message:");
-	    System.out.println(msg);
-	    System.out.println("Hash:");
-	    System.out.println(calculateHash(msg));
-	} catch (Exception ex) {
-	    System.err.println("Exception caught");
-	    System.err.println(ex);
-	    ex.printStackTrace();
-	}
+    public static BigInteger calculateHashAsBigInt(String x) {
+	String hexString = calculateHash(x);
+
     }
 
 }
