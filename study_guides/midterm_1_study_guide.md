@@ -27,15 +27,15 @@ _The first (of three) midterms is on 2 OCTOBER 2018.  You should study the topic
 
 ## Digital Signatures and Digital Identity
 
-1. Understand how digital signatures work and three fundamental algorithms for a digital signature scheme:
+1. Be able to explain the Unforgeability Game and how it can be used to determine the strength/validity of a digital signature scheme.
+1. Understand how identities work in Bitcoin.
+1. Understand entirely decentralized identity management compared to a public key infrastructure (benefits and drawbacks).
+1. Understand how digital signatures work and the three fundamental algorithms for a digital signature scheme:
 ```
 (sk, pk) = generateKeys(keysize)
 sig = sign(sk, msg)
 isValid = verify(pk, message, sig)
 ```
-1. Be able to explain the Unforgeability Game and how it can be used to determine the strength/validity of a digital signature scheme.
-1. Understand how identities work in Bitcoin.
-1. Understand entirely decentralized identity management compared to a public key infrastructure (benefits and drawbacks).
 
 ## Centralized Cryptocurrencies
 
@@ -63,7 +63,7 @@ isValid = verify(pk, message, sig)
 4. What are the three most important properties of hash puzzles?
 5. Understand Bernoulli trials and Poisson processes, and their impact on Bitcoin mining (e.g. exponential distribution of block times, block generation occurring independently, etc.)
 6. What is hashpower?  Given that a miner controls some fraction of total hashpower of the network, what is the mean time to their next generated block?
-7. Why is it important the miner results are trivial to verify compared to the computing power necessary to generate a block?
+7. Why is it important that the miner's results (i.e. the validity of the generated block with nonce) are trivial to verify compared to the computing power necessary to generate a block?
 8. Be able to explain what a 51% attack is, how it can be accomplished, and what the attacker can and cannot do.  How does this compare to Scrooge in ScroogeCoin?
 
 ## Mechanics of Bitcoin
