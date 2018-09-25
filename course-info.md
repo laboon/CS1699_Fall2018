@@ -22,7 +22,7 @@ IS 403
 
 **TA:**
 
-TBD, GitHub username: `TBD`
+Raymond Zhang, GitHub username: `chzGrd`
 
 **Class GitHub repo:**
 

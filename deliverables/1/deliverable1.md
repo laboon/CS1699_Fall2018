@@ -14,7 +14,7 @@ You may use any of the sample code provided in the repository for this project (
 
 You will turn in a sheet to me (see Format, below) and create your code and upload it to a repository on GitHub.
 
-The repository you create should be private.  Usernames `laboon` (the instructor) and `TBD` (the TA) should be added as collaborators.  The code should be entirely on the master branch.  Aside from the code, the only files in the repository should be the optional `README.md` file and .gitignore files.
+The repository you create should be private.  Usernames `laboon` (the instructor) and `chzGrd` (Raymond Zhang, the TA) should be added as collaborators.  The code should be entirely on the master branch.  Aside from the code, the only files in the repository should be the optional `README.md` file and .gitignore files.
 
 You will need to have an account on GitHub and be able to create private repositories.  If you cannot create a private repository on GitHub, please sign up for a Student Developer Pack at https://education.github.com/.  The Student Developer Pack is free and will give you the ability to create private repositories as well as other benefits.
 
