@@ -24,12 +24,12 @@ public class HashPointer {
      */
 
     private static String convertBytesToHexString(byte[] bytes) {
-	StringBuffer toReturn = new StringBuffer();
-	for (int j = 0; j < bytes.length; j++) {
-	    String hexit = String.format("%02x", bytes[j]);
-	    toReturn.append(hexit);
-	}
-	return toReturn.toString();
+        StringBuffer toReturn = new StringBuffer();
+        for (int j = 0; j < bytes.length; j++) {
+            String hexit = String.format("%02x", bytes[j]);
+            toReturn.append(hexit);
+        }
+        return toReturn.toString();
     }
 
     /**
@@ -41,22 +41,22 @@ public class HashPointer {
      */
 
     public static String calculateHash(HashableObject x) {
-	if (x == null) {
-	    return "0";
-	}
-	String dataAsString = x.getDataAsString();
-	byte[] hash = null;
-	try {
-	    MessageDigest digest = MessageDigest.getInstance("SHA-256");
-	    hash = digest.digest(
-				 dataAsString.getBytes(StandardCharsets.UTF_8));
+        if (x == null) {
+            return "0";
+        }
+        String dataAsString = x.getDataAsString();
+        byte[] hash = null;
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            hash = digest.digest(
+                                 dataAsString.getBytes(StandardCharsets.UTF_8));
 
-	} catch (NoSuchAlgorithmException nsaex) {
-	    System.err.println("No SHA-256 algorithm found.");
-	    System.err.println("This generally should not happen...");
-	    System.exit(1);
-	}
-	return convertBytesToHexString(hash);
+        } catch (NoSuchAlgorithmException nsaex) {
+            System.err.println("No SHA-256 algorithm found.");
+            System.err.println("This generally should not happen...");
+            System.exit(1);
+        }
+        return convertBytesToHexString(hash);
 
     }
 
@@ -66,7 +66,7 @@ public class HashPointer {
      */
 
     public HashableObject getReference() {
-	return _reference;
+        return _reference;
     }
 
     /**
@@ -75,7 +75,7 @@ public class HashPointer {
      */
 
     public String getHash() {
-	return _hash;
+        return _hash;
     }
 
     /**
@@ -86,17 +86,17 @@ public class HashPointer {
      */
 
     public boolean referenceValid() throws InvalidHashException {
-	// null should always equal special hash "0"
-	if (_reference == null && _hash == "0") {
-	    return true;
-	}
+        // null should always equal special hash "0"
+        if (_reference == null && _hash == "0") {
+            return true;
+        }
 
-	String calculatedHash = calculateHash(_reference);
-	if (_hash.equals(calculatedHash)) {
-	    return true;
-	} else {
-	    throw new InvalidHashException(_hash, calculatedHash);
-	}
+        String calculatedHash = calculateHash(_reference);
+        if (_hash.equals(calculatedHash)) {
+            return true;
+        } else {
+            throw new InvalidHashException(_hash, calculatedHash);
+        }
     }
 
     /**
@@ -108,7 +108,7 @@ public class HashPointer {
      */
 
     public HashPointer(HashableObject reference) {
-	_reference = reference;
-	_hash = calculateHash(_reference);
+        _reference = reference;
+        _hash = calculateHash(_reference);
     }
 }

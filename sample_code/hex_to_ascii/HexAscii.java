@@ -20,27 +20,27 @@ public class HexAscii {
      */
 
     public static String hex2Ascii(String hex) {
-	StringBuilder toReturn = new StringBuilder();
-	char asciiChar;
-	String doubleHex;
-	try {
-	    for (int j = 0; j < hex.length(); j += 2) {
-		doubleHex = hex.substring(j, j + 2);
-		asciiChar = (char) Integer.parseInt(doubleHex, 16);
-		toReturn.append(asciiChar);
-	    }
-	} catch (Exception ex) {
-	    System.out.println("Exception " + ex);
-	    // Just exit loop - this could happen if there is
-	    // an odd number of chars
-	}
-	return toReturn.toString();
+        StringBuilder toReturn = new StringBuilder();
+        char asciiChar;
+        String doubleHex;
+        try {
+            for (int j = 0; j < hex.length(); j += 2) {
+                doubleHex = hex.substring(j, j + 2);
+                asciiChar = (char) Integer.parseInt(doubleHex, 16);
+                toReturn.append(asciiChar);
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception " + ex);
+            // Just exit loop - this could happen if there is
+            // an odd number of chars
+        }
+        return toReturn.toString();
 
     }
 
     public static void main(String[] args) {
-	for (String s : args) {
-	    System.out.println(hex2Ascii(s));
-	}
+        for (String s : args) {
+            System.out.println(hex2Ascii(s));
+        }
     }
 }

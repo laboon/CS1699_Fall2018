@@ -24,9 +24,9 @@ public class Miner {
      * @return nonce incremented by one in string form
      */
     public static String incrementStringNonce(String nonce) {
-	BigInteger bi = new BigInteger(nonce, 16);
-	bi = bi.add(BigInteger.ONE);
-	return bi.toString(16);
+        BigInteger bi = new BigInteger(nonce, 16);
+        bi = bi.add(BigInteger.ONE);
+        return bi.toString(16);
     }
 
     /**
@@ -37,7 +37,7 @@ public class Miner {
      * @return String str left-padded with 0's
      */
     public static String leftPad(String str, int n) {
-	return String.format("%1$" + n + "s", str).replace(' ', '0');
+        return String.format("%1$" + n + "s", str).replace(' ', '0');
     }
 
     /**
@@ -49,60 +49,60 @@ public class Miner {
      * @param endTime - time hashing ended
      */
     public static void printHashRate(BigInteger numHashes,
-				     long startTime,
-				     long endTime) {
-	long timeDiff = endTime - startTime;
-	long seconds = timeDiff / 1000000000;
-	BigInteger time = new BigInteger ((Long.valueOf(seconds)).toString());
-	BigInteger hashesPerSecond = numHashes.divide(time);
-	System.out.println("Hash rate = " + hashesPerSecond + " hashes per second");
+                                     long startTime,
+                                     long endTime) {
+        long timeDiff = endTime - startTime;
+        long seconds = timeDiff / 1000000000;
+        BigInteger time = new BigInteger ((Long.valueOf(seconds)).toString());
+        BigInteger hashesPerSecond = numHashes.divide(time);
+        System.out.println("Hash rate = " + hashesPerSecond + " hashes per second");
 
     }
 
     public static void main(String[] args) {
-	if (args.length != 2) {
-	    System.err.println("Usage: *block_string* *target_in_hex*");
-	    System.exit(1);
-	}
-	String nonce = "0";
-	String block = args[0];
-	BigInteger target = new BigInteger(args[1], 16);
-	boolean lookingForTarget = true;
-	String concat = "";
-	BigInteger hash = null;
+        if (args.length != 2) {
+            System.err.println("Usage: *block_string* *target_in_hex*");
+            System.exit(1);
+        }
+        String nonce = "0";
+        String block = args[0];
+        BigInteger target = new BigInteger(args[1], 16);
+        boolean lookingForTarget = true;
+        String concat = "";
+        BigInteger hash = null;
 
-	BigInteger numHashes = new BigInteger("0");
-	long startTime = System.nanoTime();
+        BigInteger numHashes = new BigInteger("0");
+        long startTime = System.nanoTime();
 
-	// Keep looping until we find target...
-	while (lookingForTarget) {
+        // Keep looping until we find target...
+        while (lookingForTarget) {
 
-	    // Increment number of hashes tried
-	    numHashes = numHashes.add(BigInteger.ONE);
-	    // Concatenate our nonce and our block
-	    concat = (leftPad(nonce, 64)) + block;
+            // Increment number of hashes tried
+            numHashes = numHashes.add(BigInteger.ONE);
+            // Concatenate our nonce and our block
+            concat = (leftPad(nonce, 64)) + block;
 
-	    // Uncomment to see failed attempts
-	    // System.out.println("Trying: " + concat);
+            // Uncomment to see failed attempts
+            // System.out.println("Trying: " + concat);
 
-	    // Calculate the hash.  Kept in a BigInteger since we will want to compare it.
-	    hash = Sha256Hash.hashBigInteger(concat);
+            // Calculate the hash.  Kept in a BigInteger since we will want to compare it.
+            hash = Sha256Hash.hashBigInteger(concat);
 
-	    // If our hash is less than the target, we have succeeded
-	    if (hash.compareTo(target) == -1) {
-		long endTime = System.nanoTime();
-		printHashRate(numHashes, startTime, endTime);
-		lookingForTarget = false;
-		System.out.println("Nonce       = " + nonce);
-		System.out.println("Full block  = " + concat);
-		System.out.println("Hash(block) = " + leftPad(hash.toString(16), 64));
-	    } else {
-		// Uncomment to see failed attempts
-		// System.out.println("Fail, hash "
-		// 		   + leftPad(hash.toString(16), 64) + " >= "
-		// 		   + leftPad(target.toString(16), 64));
-		nonce = incrementStringNonce(nonce);
-	    }
-	}
+            // If our hash is less than the target, we have succeeded
+            if (hash.compareTo(target) == -1) {
+                long endTime = System.nanoTime();
+                printHashRate(numHashes, startTime, endTime);
+                lookingForTarget = false;
+                System.out.println("Nonce       = " + nonce);
+                System.out.println("Full block  = " + concat);
+                System.out.println("Hash(block) = " + leftPad(hash.toString(16), 64));
+            } else {
+                // Uncomment to see failed attempts
+                // System.out.println("Fail, hash "
+                //            + leftPad(hash.toString(16), 64) + " >= "
+                //            + leftPad(target.toString(16), 64));
+                nonce = incrementStringNonce(nonce);
+            }
+        }
     }
 }

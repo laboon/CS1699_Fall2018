@@ -16,12 +16,12 @@ public class Sha256Hash {
      */
 
     private static String convertBytesToHexString(byte[] bytes) {
-	StringBuffer toReturn = new StringBuffer();
-	for (int j = 0; j < bytes.length; j++) {
-	    String hexit = String.format("%02x", bytes[j]);
-	    toReturn.append(hexit);
-	}
-	return toReturn.toString();
+        StringBuffer toReturn = new StringBuffer();
+        for (int j = 0; j < bytes.length; j++) {
+            String hexit = String.format("%02x", bytes[j]);
+            toReturn.append(hexit);
+        }
+        return toReturn.toString();
     }
 
     /**
@@ -32,38 +32,38 @@ public class Sha256Hash {
      */
 
     public static String calculateHash(String x) {
-	if (x == null) {
-	    return "0";
-	}
-	byte[] hash = null;
-	try {
-	    MessageDigest digest = MessageDigest.getInstance("SHA-256");
-	    hash = digest.digest(x.getBytes());
-	} catch (NoSuchAlgorithmException nsaex) {
-	    System.err.println("No SHA-256 algorithm found.");
-	    System.err.println("This generally should not happen...");
-	    System.exit(1);
-	}
-	return convertBytesToHexString(hash);
+        if (x == null) {
+            return "0";
+        }
+        byte[] hash = null;
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            hash = digest.digest(x.getBytes());
+        } catch (NoSuchAlgorithmException nsaex) {
+            System.err.println("No SHA-256 algorithm found.");
+            System.err.println("This generally should not happen...");
+            System.exit(1);
+        }
+        return convertBytesToHexString(hash);
 
     }
 
     public static void main(String[] args) {
-	if (args.length != 1) {
-	    System.err.println("Usage: java Sha256Hash *msg*");
-	    System.exit(1);
-	}
-	try {
-	    String msg = args[0];
-	    System.out.println("Message:");
-	    System.out.println(msg);
-	    System.out.println("Hash:");
-	    System.out.println(calculateHash(msg));
-	} catch (Exception ex) {
-	    System.err.println("Exception caught");
-	    System.err.println(ex);
-	    ex.printStackTrace();
-	}
+        if (args.length != 1) {
+            System.err.println("Usage: java Sha256Hash *msg*");
+            System.exit(1);
+        }
+        try {
+            String msg = args[0];
+            System.out.println("Message:");
+            System.out.println(msg);
+            System.out.println("Hash:");
+            System.out.println(calculateHash(msg));
+        } catch (Exception ex) {
+            System.err.println("Exception caught");
+            System.err.println(ex);
+            ex.printStackTrace();
+        }
     }
 
 }

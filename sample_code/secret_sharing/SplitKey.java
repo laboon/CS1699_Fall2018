@@ -9,8 +9,8 @@ public class SplitKey {
      * NOTE: EXITS PROGRAM WITH EXIT CODE 1.
      */
     public static void printUsageAndExit() {
-	System.err.println("Usage: java SplitKey *128-bit # in hex*");
-	System.exit(1);
+        System.err.println("Usage: java SplitKey *128-bit # in hex*");
+        System.exit(1);
     }
 
     /**
@@ -20,13 +20,13 @@ public class SplitKey {
      */
 
     private static String convertBigIntToHexString(BigInteger b) {
-	byte[] bytes = b.toByteArray();
-	StringBuffer toReturn = new StringBuffer();
-	for (int j = 0; j < bytes.length; j++) {
-	    String hexit = String.format("%02x", bytes[j]);
-	    toReturn.append(hexit);
-	}
-	return toReturn.toString();
+        byte[] bytes = b.toByteArray();
+        StringBuffer toReturn = new StringBuffer();
+        for (int j = 0; j < bytes.length; j++) {
+            String hexit = String.format("%02x", bytes[j]);
+            toReturn.append(hexit);
+        }
+        return toReturn.toString();
     }
 
 
@@ -35,8 +35,8 @@ public class SplitKey {
      * @return pseudorandomly generated 128-bit integer
      */
     public static BigInteger generateRandom128BitInteger() {
-	Random prng = new Random();
-	return new BigInteger(128, prng);
+        Random prng = new Random();
+        return new BigInteger(128, prng);
     }
 
     /**
@@ -47,16 +47,16 @@ public class SplitKey {
      */
 
     public static BigInteger[] splitKey(BigInteger s) {
-	BigInteger[] toReturn = new BigInteger[2];
-	BigInteger r = generateRandom128BitInteger();
-	BigInteger x = s.xor(r);
+        BigInteger[] toReturn = new BigInteger[2];
+        BigInteger r = generateRandom128BitInteger();
+        BigInteger x = s.xor(r);
 
-	System.out.println("Secret s = " + s);
-	System.out.println("Random r = " + r);
-	System.out.println("XOR    x = " + x);
-	toReturn[0] = r;
-	toReturn[1] = x;
-	return toReturn;
+        System.out.println("Secret s = " + s);
+        System.out.println("Random r = " + r);
+        System.out.println("XOR    x = " + x);
+        toReturn[0] = r;
+        toReturn[1] = x;
+        return toReturn;
     }
 
     /**
@@ -66,25 +66,26 @@ public class SplitKey {
      */
 
     public static void printResults(BigInteger[] results) {
-	System.out.println("R      : " +
-			   convertBigIntToHexString(results[0]));
-	System.out.println("R XOR S: " +
-			   convertBigIntToHexString(results[1]));
+        System.out.println("R      : " +
+                           convertBigIntToHexString(results[0]));
+        System.out.println("R XOR S: " +
+                           convertBigIntToHexString(results[1]));
     }
 
     public static void main(String[] args) {
-    	if (args.length != 1 || args[0].length() != 32) {
-	    printUsageAndExit();
-	}
 
-	try {
-	    // Read as hex, i.e. radix = 16
-	    BigInteger toSplit = new BigInteger(args[0], 16);
-	    BigInteger[] results = splitKey(toSplit);
-	    printResults(results);
-	} catch (Exception ex) {
-	    printUsageAndExit();
-	}
+        if (args.length != 1 || args[0].length() != 32) {
+            printUsageAndExit();
+        }
+
+        try {
+            // Read as hex, i.e. radix = 16
+            BigInteger toSplit = new BigInteger(args[0], 16);
+            BigInteger[] results = splitKey(toSplit);
+            printResults(results);
+        } catch (Exception ex) {
+            printUsageAndExit();
+        }
 
     }
 }

@@ -30,12 +30,12 @@ public class LaboonHash {
      */
 
     public static String convertBytesToHexString(byte[] bytes) {
-	StringBuffer toReturn = new StringBuffer();
-	for (int j = 0; j < bytes.length; j++) {
-	    String hexit = String.format("%02x", bytes[j]);
-	    toReturn.append(hexit);
-	}
-	return toReturn.toString();
+        StringBuffer toReturn = new StringBuffer();
+        for (int j = 0; j < bytes.length; j++) {
+            String hexit = String.format("%02x", bytes[j]);
+            toReturn.append(hexit);
+        }
+        return toReturn.toString();
     }
 
     /**
@@ -46,14 +46,14 @@ public class LaboonHash {
      */
 
     public static int calculateNumBlocks(String s) {
-	int numBlocks = -1;
-	int len = s.length();
-	if (len % BLOCK_SIZE == 0) {
-	    numBlocks = len / BLOCK_SIZE;
-	} else {
-	    numBlocks = (len / BLOCK_SIZE) + 1;
-	}
-	return numBlocks;
+        int numBlocks = -1;
+        int len = s.length();
+        if (len % BLOCK_SIZE == 0) {
+            numBlocks = len / BLOCK_SIZE;
+        } else {
+            numBlocks = (len / BLOCK_SIZE) + 1;
+        }
+        return numBlocks;
     }
 
     /**
@@ -63,9 +63,9 @@ public class LaboonHash {
      */
 
     public static byte[][] generateInitialBlocks(String s) {
-	int numBlocks = calculateNumBlocks(s);
-	byte[][] toReturn = new byte[numBlocks][1];
-	return toReturn;
+        int numBlocks = calculateNumBlocks(s);
+        byte[][] toReturn = new byte[numBlocks][1];
+        return toReturn;
     }
 
     /**
@@ -90,11 +90,11 @@ public class LaboonHash {
      */
 
     public static String pad(String s, int len) {
-	int sizeToPad = BLOCK_SIZE - s.length();
-	int modValue = (int) Math.pow(10, sizeToPad);
-	int moddedLen = len % modValue;
-	String padded = String.format("%0" + sizeToPad + "d", moddedLen);
-	return padded;
+        int sizeToPad = BLOCK_SIZE - s.length();
+        int modValue = (int) Math.pow(10, sizeToPad);
+        int moddedLen = len % modValue;
+        String padded = String.format("%0" + sizeToPad + "d", moddedLen);
+        return padded;
     }
 
     /**
@@ -108,18 +108,18 @@ public class LaboonHash {
      */
 
     public static String[] strengthenIfNecessary(int origLength,
-						 String[] stringBlocks) {
-	// Theoretically, we could not pass in origLength, and
-	// re-calculate length of original string by adding up all
-	// of the strings in stringBlocks.  This seemed more straightforward
-	// despite the extra argument, however.
-	String finalBlock = stringBlocks[stringBlocks.length - 1];
-	int finalBlockLength = finalBlock.length();
-	if (finalBlockLength < BLOCK_SIZE) {
-	    String paddedBlock = finalBlock + pad(finalBlock, origLength);
-	    stringBlocks[stringBlocks.length - 1] = paddedBlock;
-	}
-	return stringBlocks;
+                                                 String[] stringBlocks) {
+        // Theoretically, we could not pass in origLength, and
+        // re-calculate length of original string by adding up all
+        // of the strings in stringBlocks.  This seemed more straightforward
+        // despite the extra argument, however.
+        String finalBlock = stringBlocks[stringBlocks.length - 1];
+        int finalBlockLength = finalBlock.length();
+        if (finalBlockLength < BLOCK_SIZE) {
+            String paddedBlock = finalBlock + pad(finalBlock, origLength);
+            stringBlocks[stringBlocks.length - 1] = paddedBlock;
+        }
+        return stringBlocks;
     }
 
     /**
@@ -134,7 +134,7 @@ public class LaboonHash {
      */
 
     public static String[] splitBlocks(String s) {
-	return s.split("(?<=\\G.{" + BLOCK_SIZE + "})");
+        return s.split("(?<=\\G.{" + BLOCK_SIZE + "})");
     }
 
     /**
@@ -143,16 +143,16 @@ public class LaboonHash {
      */
 
     public static byte[][] stringBlocksToByteBlocks(String[] stringBlocks) {
-	byte[][] toReturn = new byte[stringBlocks.length][BLOCK_SIZE];
-	for (int j = 0; j < stringBlocks.length; j++) {
-	    // System.out.println("(" + j + ") Converting " + stringBlocks[j]);
-	    byte[] bytes = stringBlocks[j].getBytes();
-	    for (int k = 0; k < BLOCK_SIZE; k++) {
-		// System.out.println("\t(" + k + ") Converting " + bytes[k]);
-		toReturn[j][k] = bytes[k];
-	    }
-	}
-	return toReturn;
+        byte[][] toReturn = new byte[stringBlocks.length][BLOCK_SIZE];
+        for (int j = 0; j < stringBlocks.length; j++) {
+            // System.out.println("(" + j + ") Converting " + stringBlocks[j]);
+            byte[] bytes = stringBlocks[j].getBytes();
+            for (int k = 0; k < BLOCK_SIZE; k++) {
+                // System.out.println("\t(" + k + ") Converting " + bytes[k]);
+                toReturn[j][k] = bytes[k];
+            }
+        }
+        return toReturn;
     }
 
     /**
@@ -168,25 +168,25 @@ public class LaboonHash {
      */
 
     public static byte[][] stringToByteBlocks(String s) {
-	int origLength = s.length();
-	String[] stringBlocks = splitBlocks(s);
-	stringBlocks = strengthenIfNecessary(origLength, stringBlocks);
+        int origLength = s.length();
+        String[] stringBlocks = splitBlocks(s);
+        stringBlocks = strengthenIfNecessary(origLength, stringBlocks);
 
-	// Display string blocks
-	System.out.println("String Blocks:");
-	for (String block : stringBlocks) {
-	    System.out.println(block);
-	}
+        // Display string blocks
+        System.out.println("String Blocks:");
+        for (String block : stringBlocks) {
+            System.out.println(block);
+        }
 
-	byte[][] toReturn = stringBlocksToByteBlocks(stringBlocks);
+        byte[][] toReturn = stringBlocksToByteBlocks(stringBlocks);
 
-	// Display byte blocks
-	System.out.println("Byte Blocks:");
-	for (byte[] b : toReturn) {
-	    System.out.println(convertBytesToHexString(b));
-	}
+        // Display byte blocks
+        System.out.println("Byte Blocks:");
+        for (byte[] b : toReturn) {
+            System.out.println(convertBytesToHexString(b));
+        }
 
-	return toReturn;
+        return toReturn;
     }
 
     /**
@@ -203,17 +203,17 @@ public class LaboonHash {
      */
 
     public static byte[] concatArrays(byte[] a1, byte[] a2) {
-	int len1 = a1.length;
-	int len2 = a2.length;
-	int c = 0;
-	byte[] toReturn = new byte[a1.length + a2.length];
-	for (int j = 0; j < len1; j++) {
-	    toReturn[c++] = a1[j];
-	}
-	for (int j = 0; j < len2; j++) {
-	    toReturn[c++] = a2[j];
-	}
-	return toReturn;
+        int len1 = a1.length;
+        int len2 = a2.length;
+        int c = 0;
+        byte[] toReturn = new byte[a1.length + a2.length];
+        for (int j = 0; j < len1; j++) {
+            toReturn[c++] = a1[j];
+        }
+        for (int j = 0; j < len2; j++) {
+            toReturn[c++] = a2[j];
+        }
+        return toReturn;
 
     }
 
@@ -233,16 +233,16 @@ public class LaboonHash {
      */
 
     public static byte[] compress(byte[] oldResult, byte[] block) {
-	byte[] combined = concatArrays(oldResult, block);
-	byte[] result = { 65, 63 };
-	for (byte b : combined) {
-	    // Have to store this since it will be modified by the
-	    // line right after it
-	    byte origResult0 = result[0];
-	    result[0] = (byte) ((byte) (result[1] ^ b) + (byte) b);
-	    result[1] = (byte) ((byte) (origResult0 ^ b) - (byte) b);
-	}
-	return result;
+        byte[] combined = concatArrays(oldResult, block);
+        byte[] result = { 65, 63 };
+        for (byte b : combined) {
+            // Have to store this since it will be modified by the
+            // line right after it
+            byte origResult0 = result[0];
+            result[0] = (byte) ((byte) (result[1] ^ b) + (byte) b);
+            result[1] = (byte) ((byte) (origResult0 ^ b) - (byte) b);
+        }
+        return result;
 
     }
 
@@ -256,17 +256,17 @@ public class LaboonHash {
      */
 
     public static byte[] compressAll(byte[][] byteBlocks) {
-	byte[] result = INITIAL_VALUE;
-	int numRounds = 0;
-	for (byte[] b : byteBlocks) {
-	    System.out.print("Round " + numRounds++ + ": prev res = "
-			     + convertBytesToHexString(result)
-			     + ", block = " + convertBytesToHexString(b)
-			     + " --> ");
-	    result = compress(result, b);
-	    System.out.println(convertBytesToHexString(result));
-	}
-	return result;
+        byte[] result = INITIAL_VALUE;
+        int numRounds = 0;
+        for (byte[] b : byteBlocks) {
+            System.out.print("Round " + numRounds++ + ": prev res = "
+                             + convertBytesToHexString(result)
+                             + ", block = " + convertBytesToHexString(b)
+                             + " --> ");
+            result = compress(result, b);
+            System.out.println(convertBytesToHexString(result));
+        }
+        return result;
 
     }
 
@@ -276,25 +276,25 @@ public class LaboonHash {
      * @return byte[] - LaboonHash digest of string
      */
     public static byte[] laboonHash(String toHash) {
-	byte[][] blocks = stringToByteBlocks(toHash);
-	byte[] toReturn = compressAll(blocks);
-	return toReturn;
+        byte[][] blocks = stringToByteBlocks(toHash);
+        byte[] toReturn = compressAll(blocks);
+        return toReturn;
     }
 
     /**
      * Print usage information and exit program with exit code 1.
      */
     public static void printUsageAndExit() {
-	System.err.println("Enter a single string to hash");
-	System.exit(1);
+        System.err.println("Enter a single string to hash");
+        System.exit(1);
     }
 
     public static void main(String[] args) {
-	if (args.length != 1) {
-	    printUsageAndExit();
-	}
-	byte[] result = laboonHash(args[0]);
-	System.out.println("Hash: " + convertBytesToHexString(result));
+        if (args.length != 1) {
+            printUsageAndExit();
+        }
+        byte[] result = laboonHash(args[0]);
+        System.out.println("Hash: " + convertBytesToHexString(result));
 
     }
 }

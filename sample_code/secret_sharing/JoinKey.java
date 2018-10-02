@@ -9,8 +9,8 @@ public class JoinKey {
      * NOTE: EXITS PROGRAM WITH EXIT CODE 1.
      */
     public static void printUsageAndExit() {
-	System.err.println("Usage: java SplitKey *share1* *share2*");
-	System.exit(1);
+        System.err.println("Usage: java SplitKey *share1* *share2*");
+        System.exit(1);
     }
 
     /**
@@ -23,13 +23,13 @@ public class JoinKey {
      */
 
     private static String convertBigIntToHexString(BigInteger b) {
-	byte[] bytes = b.toByteArray();
-	StringBuffer toReturn = new StringBuffer();
-	for (int j = 1; j < bytes.length; j++) {
-	    String hexit = String.format("%02x", bytes[j]);
-	    toReturn.append(hexit);
-	}
-	return toReturn.toString();
+        byte[] bytes = b.toByteArray();
+        StringBuffer toReturn = new StringBuffer();
+        for (int j = 1; j < bytes.length; j++) {
+            String hexit = String.format("%02x", bytes[j]);
+            toReturn.append(hexit);
+        }
+        return toReturn.toString();
     }
 
 
@@ -43,8 +43,8 @@ public class JoinKey {
      */
 
     public static BigInteger joinKey(BigInteger share1,
-					BigInteger share2) {
-	return share1.xor(share2);
+                                     BigInteger share2) {
+        return share1.xor(share2);
     }
 
     /**
@@ -53,24 +53,24 @@ public class JoinKey {
      */
 
     public static void printResults(BigInteger result) {
-	System.out.println("S      : " +
-			   convertBigIntToHexString(result));
+        System.out.println("S      : " +
+                           convertBigIntToHexString(result));
     }
 
     public static void main(String[] args) {
-    	if (args.length != 2) {
-	    printUsageAndExit();
-	}
+        if (args.length != 2) {
+            printUsageAndExit();
+        }
 
-	try {
-	    // Read as hex, i.e. radix = 16
-	    BigInteger share1 = new BigInteger(args[0], 16);
-	    BigInteger share2 = new BigInteger(args[1], 16);
-	    BigInteger result = joinKey(share1, share2);
-	    printResults(result);
-	} catch (Exception ex) {
-	    printUsageAndExit();
-	}
+        try {
+            // Read as hex, i.e. radix = 16
+            BigInteger share1 = new BigInteger(args[0], 16);
+            BigInteger share2 = new BigInteger(args[1], 16);
+            BigInteger result = joinKey(share1, share2);
+            printResults(result);
+        } catch (Exception ex) {
+            printUsageAndExit();
+        }
 
     }
 }

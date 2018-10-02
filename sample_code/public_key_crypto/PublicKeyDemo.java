@@ -18,12 +18,12 @@ public class PublicKeyDemo {
      */
 
     public static String convertBytesToHexString(byte[] bytes) {
-	StringBuffer toReturn = new StringBuffer();
-	for (int j = 0; j < bytes.length; j++) {
-	    String hexit = String.format("%02x", bytes[j]);
-	    toReturn.append(hexit);
-	}
-	return toReturn.toString();
+        StringBuffer toReturn = new StringBuffer();
+        for (int j = 0; j < bytes.length; j++) {
+            String hexit = String.format("%02x", bytes[j]);
+            toReturn.append(hexit);
+        }
+        return toReturn.toString();
     }
 
 
@@ -36,14 +36,14 @@ public class PublicKeyDemo {
      */
 
     public static byte[] convertHexToBytes(String hex) {
-	byte[] bytes = new byte[hex.length() / 2];
-	int c = 0;
-	for (int j = 0; j < hex.length(); j += 2) {
-	    String twoHex = hex.substring(j, j + 2);
-	    byte byteVal = (byte) Integer.parseInt(twoHex, 16);
-	    bytes[c++] = byteVal;
-	}
-	return bytes;
+        byte[] bytes = new byte[hex.length() / 2];
+        int c = 0;
+        for (int j = 0; j < hex.length(); j += 2) {
+            String twoHex = hex.substring(j, j + 2);
+            byte byteVal = (byte) Integer.parseInt(twoHex, 16);
+            bytes[c++] = byteVal;
+        }
+        return bytes;
     }
 
 
@@ -53,10 +53,10 @@ public class PublicKeyDemo {
      */
 
     public static KeyPair getKeyPair() throws Exception {
-	KeyPairGenerator keyGen = KeyPairGenerator.getInstance("DSA", "SUN");
-	SecureRandom random = new SecureRandom(); // .getInstance("SHA1PRNG", "SUN");
-	keyGen.initialize(1024, random);
-	return keyGen.generateKeyPair();
+        KeyPairGenerator keyGen = KeyPairGenerator.getInstance("DSA", "SUN");
+        SecureRandom random = new SecureRandom(); // .getInstance("SHA1PRNG", "SUN");
+        keyGen.initialize(1024, random);
+        return keyGen.generateKeyPair();
     }
 
     /**
@@ -67,10 +67,10 @@ public class PublicKeyDemo {
      */
 
     public static PublicKey loadPublicKey(String stored) throws Exception {
-    	byte[] data = convertHexToBytes(stored);
-    	X509EncodedKeySpec spec = new X509EncodedKeySpec(data);
-    	KeyFactory fact = KeyFactory.getInstance("DSA");
-    	return fact.generatePublic(spec);
+        byte[] data = convertHexToBytes(stored);
+        X509EncodedKeySpec spec = new X509EncodedKeySpec(data);
+        KeyFactory fact = KeyFactory.getInstance("DSA");
+        return fact.generatePublic(spec);
     }
 
     /**
@@ -81,10 +81,10 @@ public class PublicKeyDemo {
      */
 
     public static PrivateKey loadPrivateKey(String stored) throws Exception {
-	byte[] data = convertHexToBytes(stored);
-    	KeyFactory keyFactory=KeyFactory.getInstance("DSA");
-	PrivateKey privKey=keyFactory.generatePrivate(new PKCS8EncodedKeySpec(data));
-	return privKey;
+        byte[] data = convertHexToBytes(stored);
+        KeyFactory keyFactory=KeyFactory.getInstance("DSA");
+        PrivateKey privKey=keyFactory.generatePrivate(new PKCS8EncodedKeySpec(data));
+        return privKey;
     }
 
     /**
@@ -96,10 +96,10 @@ public class PublicKeyDemo {
      */
 
     public static String signMessage(String msg, String key) throws Exception {
-	PrivateKey sk = loadPrivateKey(key);
-	byte[] sigBytes = sign(msg, sk);
-	String toReturn = convertBytesToHexString(sigBytes);
-	return toReturn;
+        PrivateKey sk = loadPrivateKey(key);
+        byte[] sigBytes = sign(msg, sk);
+        String toReturn = convertBytesToHexString(sigBytes);
+        return toReturn;
     }
 
     /**
@@ -112,10 +112,10 @@ public class PublicKeyDemo {
      */
 
     public static boolean verifyMessage(String msg, String sig, String key) throws Exception {
-	PublicKey pk = loadPublicKey(key);
-	byte[] sigBytes = convertHexToBytes(sig);
-	boolean toReturn = verify(msg, sigBytes, pk);
-	return toReturn;
+        PublicKey pk = loadPublicKey(key);
+        byte[] sigBytes = convertHexToBytes(sig);
+        boolean toReturn = verify(msg, sigBytes, pk);
+        return toReturn;
     }
 
     /**
@@ -127,13 +127,13 @@ public class PublicKeyDemo {
      */
 
     public static byte[] sign(String toSign, PrivateKey sk) throws Exception {
-	Signature dsa = Signature.getInstance("SHA1withDSA", "SUN");
-	dsa.initSign(sk);
+        Signature dsa = Signature.getInstance("SHA1withDSA", "SUN");
+        dsa.initSign(sk);
 
-	byte[] bytes = toSign.getBytes();
-	dsa.update(bytes, 0, bytes.length);
-	byte[] sig = dsa.sign();
-	return sig;
+        byte[] bytes = toSign.getBytes();
+        dsa.update(bytes, 0, bytes.length);
+        byte[] sig = dsa.sign();
+        return sig;
     }
 
     /**
@@ -146,12 +146,12 @@ public class PublicKeyDemo {
      */
 
     public static boolean verify(String toCheck, byte[] sig, PublicKey pk)
-	throws Exception {
-	    Signature sig2 = Signature.getInstance("SHA1withDSA", "SUN");
-	    byte[] bytes = toCheck.getBytes();
-	    sig2.initVerify(pk);
-	    sig2.update(bytes, 0, bytes.length);
-	    return sig2.verify(sig);
+        throws Exception {
+        Signature sig2 = Signature.getInstance("SHA1withDSA", "SUN");
+        byte[] bytes = toCheck.getBytes();
+        sig2.initVerify(pk);
+        sig2.update(bytes, 0, bytes.length);
+        return sig2.verify(sig);
     }
 
     /**
@@ -164,42 +164,42 @@ public class PublicKeyDemo {
 
     public static void main(String[] args) {
         try {
-	    // Generate a key pair and display
-	    KeyPair pair = getKeyPair();
-	    PrivateKey sk = pair.getPrivate();
-	    PublicKey pk = pair.getPublic();
-	    System.out.println("Public key (pk): " +
-			       convertBytesToHexString(pk.getEncoded()));
-	    System.out.println("Private key (sk): " +
-			       convertBytesToHexString(sk.getEncoded()));
+            // Generate a key pair and display
+            KeyPair pair = getKeyPair();
+            PrivateKey sk = pair.getPrivate();
+            PublicKey pk = pair.getPublic();
+            System.out.println("Public key (pk): " +
+                               convertBytesToHexString(pk.getEncoded()));
+            System.out.println("Private key (sk): " +
+                               convertBytesToHexString(sk.getEncoded()));
 
-	    // Given a string, sign it with our secret (private) key
-	    // Note that we will get back a byte array for the signature
-	    String toSign = "This was written by Bill Laboon";
-	    byte[] sig = sign(toSign, sk);
-	    System.out.println("String to sign: " + toSign);
-	    System.out.println("Sig: " + convertBytesToHexString(sig));
+            // Given a string, sign it with our secret (private) key
+            // Note that we will get back a byte array for the signature
+            String toSign = "This was written by Bill Laboon";
+            byte[] sig = sign(toSign, sk);
+            System.out.println("String to sign: " + toSign);
+            System.out.println("Sig: " + convertBytesToHexString(sig));
 
-	    // Verify signature with original string
-	    String toVerify = toSign;
-	    boolean verifies = verify(toVerify, sig, pk);
-	    System.out.println("Original string / original signature verifies: " + verifies);
+            // Verify signature with original string
+            String toVerify = toSign;
+            boolean verifies = verify(toVerify, sig, pk);
+            System.out.println("Original string / original signature verifies: " + verifies);
 
-	    // Try to verify with same signature but a modified string
-	    toVerify = "modified string";
-	    verifies = verify(toVerify, sig, pk);
-	    System.out.println("Modified string / original signature verifies: " + verifies);
+            // Try to verify with same signature but a modified string
+            toVerify = "modified string";
+            verifies = verify(toVerify, sig, pk);
+            System.out.println("Modified string / original signature verifies: " + verifies);
 
-	    // Try to verify a signature from a DIFFERENT string but original string
-	    toVerify = toSign;
-	    sig = sign("wocka wocka", sk);
-	    verifies = verify(toVerify, sig, pk);
-	    System.out.println("Original string / modified signature verifies: " + verifies);
+            // Try to verify a signature from a DIFFERENT string but original string
+            toVerify = toSign;
+            sig = sign("wocka wocka", sk);
+            verifies = verify(toVerify, sig, pk);
+            System.out.println("Original string / modified signature verifies: " + verifies);
 
-	    // Try to verify after modifying both string and signature
-	    toVerify = "modified string";
-	    verifies = verify(toVerify, sig, pk);
-	    System.out.println("Modified string / modified signature verifies: " + verifies);
+            // Try to verify after modifying both string and signature
+            toVerify = "modified string";
+            verifies = verify(toVerify, sig, pk);
+            System.out.println("Modified string / modified signature verifies: " + verifies);
 
         } catch (Exception e) {
             System.err.println("Exception: " + e.toString());

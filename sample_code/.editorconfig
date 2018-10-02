@@ -9,7 +9,7 @@ charset = utf-8
 end_of_line = lf
 insert_final_newline = true
 
-# 8 space indentation (Emacs default).
+# 4 space indentation (Java standard at most places).
 [*.java]
 indent_style = tab
-tab_width = 8
+tab_width = 4

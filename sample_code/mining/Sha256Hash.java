@@ -17,12 +17,12 @@ public class Sha256Hash {
      */
 
     private static String convertBytesToHexString(byte[] bytes) {
-	StringBuffer toReturn = new StringBuffer();
-	for (int j = 0; j < bytes.length; j++) {
-	    String hexit = String.format("%02x", bytes[j]);
-	    toReturn.append(hexit);
-	}
-	return toReturn.toString();
+        StringBuffer toReturn = new StringBuffer();
+        for (int j = 0; j < bytes.length; j++) {
+            String hexit = String.format("%02x", bytes[j]);
+            toReturn.append(hexit);
+        }
+        return toReturn.toString();
     }
 
     /**
@@ -32,19 +32,19 @@ public class Sha256Hash {
      */
 
     public static String calculateHash(String x) {
-	if (x == null) {
-	    return "0";
-	}
-	byte[] hash = null;
-	try {
-	    MessageDigest digest = MessageDigest.getInstance("SHA-256");
-	    hash = digest.digest(x.getBytes());
-	} catch (NoSuchAlgorithmException nsaex) {
-	    System.err.println("No SHA-256 algorithm found.");
-	    System.err.println("This generally should not happen...");
-	    System.exit(1);
-	}
-	return convertBytesToHexString(hash);
+        if (x == null) {
+            return "0";
+        }
+        byte[] hash = null;
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            hash = digest.digest(x.getBytes());
+        } catch (NoSuchAlgorithmException nsaex) {
+            System.err.println("No SHA-256 algorithm found.");
+            System.err.println("This generally should not happen...");
+            System.exit(1);
+        }
+        return convertBytesToHexString(hash);
 
     }
 
@@ -56,7 +56,7 @@ public class Sha256Hash {
      */
 
     public static BigInteger hashBigInteger(String toHash) {
-	return new BigInteger(calculateHash(toHash), 16);
+        return new BigInteger(calculateHash(toHash), 16);
     }
 
 

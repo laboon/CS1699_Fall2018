@@ -22,11 +22,11 @@ public class Account implements HashableObject {
      */
 
     public String getDataAsString() {
-	StringBuilder toReturn = new StringBuilder();
-	toReturn.append(_name);
-	toReturn.append("/");
-	toReturn.append(_dollars);
-	return toReturn.toString();
+        StringBuilder toReturn = new StringBuilder();
+        toReturn.append(_name);
+        toReturn.append("/");
+        toReturn.append(_dollars);
+        return toReturn.toString();
     }
 
     /**
@@ -38,8 +38,8 @@ public class Account implements HashableObject {
      */
 
     public Account(String name, String dollars) {
-	_name = name;
-	_dollars = dollars;
+        _name = name;
+        _dollars = dollars;
     }
 
 }

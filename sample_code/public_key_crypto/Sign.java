@@ -9,20 +9,20 @@
 public class Sign {
 
     public static void main(String[] args) {
-	if (args.length != 2) {
-	    System.err.println("Usage: java sign *msg* *secret_key*");
-	    System.exit(1);
-	}
-	try {
-	    String sig = PublicKeyDemo.signMessage(args[0], args[1]);
-	    System.out.println("Message:");
-	    System.out.println(args[0]);
-	    System.out.println("Signature:");
-	    System.out.println(sig);
-	} catch (Exception ex) {
-	    System.err.println("Exception: " + ex);
-	    System.exit(1);
-	}
+        if (args.length != 2) {
+            System.err.println("Usage: java sign *msg* *secret_key*");
+            System.exit(1);
+        }
+        try {
+            String sig = PublicKeyDemo.signMessage(args[0], args[1]);
+            System.out.println("Message:");
+            System.out.println(args[0]);
+            System.out.println("Signature:");
+            System.out.println(sig);
+        } catch (Exception ex) {
+            System.err.println("Exception: " + ex);
+            System.exit(1);
+        }
 
     }
 }
