@@ -1,0 +1,15 @@
+# EditorConfig specifying code styles for the sample code.
+
+# This is the root config for files under this directory.
+root = true
+
+# Global rules.
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+# 8 space indentation (Emacs default).
+[*.java]
+indent_style = tab
+tab_width = 8
