@@ -6,7 +6,7 @@ _Note: Assignments (printout and final git commit) are due at the beginning of c
 
 For the second deliverable, we are going to write code for a BillCoin miner, Mine, which accepts a file full of transactions and creates a valid candidate block which maximizes transaction fees.
 
-_Note: generating a block with an **optimal** amount of transaction fees is NP-hard, as it is simply a variant of the knapsack problem.  I am interested in determining if your program is making a good effort to maximize transaction fees, not verifying that you have picked the absolutely optimal selection.  If you are interested, here is a good description of why this is so: https://freedom-to-tinker.com/2014/10/27/bitcoin-mining-is-np-hard/_
+_Note: generating a block with an **optimal** amount of transaction fees is NP-hard, as it is simply a variant of the knapsack problem, and I don't expect you to brute-force every possible combination.  I *am* interested in determining if your program is making a good effort to maximize transaction fees, not verifying that you have picked the absolutely optimal selection.  If you are interested, here is a good description of why this is so: https://freedom-to-tinker.com/2014/10/27/bitcoin-mining-is-np-hard/_
 
 There are several limitations on the candidate block that you generate:
 
