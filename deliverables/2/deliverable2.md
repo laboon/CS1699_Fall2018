@@ -239,7 +239,16 @@ You are allowed to copy/paste/modify any sample code from the `./sample_code/*` 
 ## Tips
 
 1. I will always give a VALID transaction file.  Do not waste much time on worrying about invalid formats, invalid transactions, etc.
-2. All transaction values and totals can be held within a standard signed 32-bit int (i.e., a Java int).  There will be no transaction files with a number of transactions that cannot be stored by an int.
+5. Don't worry too much about performance.  Although efficient hashpower is extremely important in a real miner, I am concerned about correctness, not hashes per second.
+2. All transaction values and totals can be held within a standard signed 32-bit int (i.e., a Java int).  There will be no transaction files with a number of transactions that cannot be stored by an int, with a number of inputs or outputs not able to be stored by an int.
+3. TreeMaps were very useful for me when developing my solution - these act like automatically sorted-by-key HashMaps. https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html
 3. Be sure to trim carriage returns before hashing!
+3. Don't be wedded to the object-oriented paradigm!  I have found that for this deliverable, it is much more useful to approach problems in a more functional/procedural way (lots of static methods in my solution).
+5. For more information on different approaches to the knapsack problem, I recommend this paper: "Different Approaches to Solve the 0/1 Knapsack Problem" by Kristakeva and Shrestha as an overview: http://www.micsymposium.org/mics_2005/papers/paper102.pdf  The "0/1" in the title refers to the fact that an item (e.g., transaction) can either be in or out, you can't have multiple copies of it.
+4. For storing large numbers in Java, try BigInteger (https://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html).  Example, reading in a large value with a radix of 16 (i.e. hexadecimal):
 
+
+```
+    public static final BigInteger MAX_TARGET = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 16);
+```
 As always, feel free to email me or come to office hours with any questions.
