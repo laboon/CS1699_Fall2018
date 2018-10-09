@@ -11,12 +11,12 @@ _Note: generating a block with an **optimal** amount of transaction fees is NP-h
 There are several limitations on the candidate block that you generate:
 
 1. The hash of the block as a whole should meet the target difficulty passed in as the second argument (see difficulty calculation)
-2. The size of the nonce field is four ASCII charactrrs - you may fill it in with any four characters that you like, but no more or fewer (e.g., "A8hh" is a valid nonce, but neither "aa" nor "lalalalala" are)
+2. The size of the nonce field is four ASCII characters - you may fill it in with any four characters that you like, but no more or fewer (e.g., "A8hh" is a valid nonce, but neither "aa" nor "lalalalala" are)
 3. There is a size limit to the size of the block you may create (see below)
 4. It MUST contain at least one transaction.
 5. A single coinbase transaction MUST be included.  It should send 50 BillCoins plus all fees in the block to the miner's address (1333dGpHU6gQShR596zbKHXEeSihdtoyLb)
 
-You may assume that all transactions are valid (e.g. no previously-spent UTXOs).  Unlike the first deliverable, you may also assume that any file that I pass in will be entirely valid - I will not pass in an invalidly formatted or otherwise invalid file when grading the assignment.
+You may assume that all transactions are valid (e.g. no previously-spent UTXOs, no improperly signed transactions, etc.).  Unlike the first deliverable, you may also assume that any file that I pass in will be entirely valid - I will not pass in an invalidly formatted or otherwise invalid file when grading the assignment.
 
 You may use any of the sample code provided in the repository for this project (and I recommend you do, instead of re-inventing the wheel).
 
@@ -24,7 +24,7 @@ You may use any of the sample code provided in the repository for this project (
 
 Transactions consist of a series of comma-delimited inputs, a semicolon, then a series of comma-delimited outputs.  All non-coinbase transactions will have at least one input, and all transactions will have at least one output.  There is no limit on the number of inputs or outputs for a given transactions other than that a transaction that is too large will not fit in a block!
 
-Each input or output will have a `>` sign and a positive integer (i.e., > 0) indicating the value of that input or output in Billcoins.  BillCoin does not allow fractional, negative, or 0-coin transactions.
+Each input or output will have a `>` sign and a positive integer (i.e., > 0) indicating the value of that input or output in Billcoins.  BillCoin does not allow fractional, negative, or 0-coin transactions (although it does allow 0-fee transactions - but if you like, you can ignore those freeloaders!).
 
 You may assume that all transactions are valid - correctly signed, the user has access to the UTXOs being used as input, etc.  If we were operating a real miner, we would obviously be much more paranoid!
 
@@ -48,7 +48,25 @@ The nonce can be any four-character string of printable (8-bit) ASCII characters
 
 ## "Concat Root"
 
-Instead of constructing a Merkle tree, you should simply concatenate all of the transactions together (no delimiter) and get the SHA-256 hash of it.  This will be referred to as the "concat root".
+Instead of constructing a Merkle tree, you should simply concatenate all of the transactions together in order (no delimiter) and get the SHA-256 hash of it.  This will be referred to as the "concat root".  For example, assume you decide to include the following two transactions:
+
+```
+1E4BLSFNZo14q8ec7w3J3Wp6njNd7rWxbx>10;1J3ZQJ3ZBjig677KmjdJjhcQizrm4ek1Az>6,14cCzg1Xw5edM3viuTqtgeFX4tRjCXTx1H>3
+1AY7sesEcVihM5LR8Bw9WXv6bWSt7vKak4>30,1AY7sesEcVihM5LR8Bw9WXv6bWSt7vKak4>20;1EinGRFVjNuTwzPT7dZ3K9JwhAJM3qpn3U>45
+```
+
+You would concatenate them together to form:
+
+```
+1E4BLSFNZo14q8ec7w3J3Wp6njNd7rWxbx>10;1J3ZQJ3ZBjig677KmjdJjhcQizrm4ek1Az>6,14cCzg1Xw5edM3viuTqtgeFX4tRjCXTx1H>31AY7sesEcVihM5LR8Bw9WXv6bWSt7vKak4>30,1AY7sesEcVihM5LR8Bw9WXv6bWSt7vKak4>20;1EinGRFVjNuTwzPT7dZ3K9JwhAJM3qpn3U>45
+```
+
+Then run SHA-256 hash on it to get the "concat root":
+
+```
+dab45c1455517304246cb33d205f217849ed70025e45866b8125d9ddb54fadb5
+```
+
 
 ## Calculating the Block Hash
 
@@ -58,15 +76,15 @@ You should use the SHA-256 hashing algorithm on the concatenated result of: prev
 
 Blocks cannot be of unlimited size.  Although the Bitcoin weighting mechanism is a bit more complex (see https://en.bitcoin.it/wiki/Weight_units) and block size has been a very controversial topic (see https://en.bitcoin.it/wiki/Block_size_limit_controversy), we are going to just say that any candidate block must have a MAXIMUM of 16 transaction inputs and/or outputs.  That is, the total number of all inputs and outputs cannot be greater than 16.
 
-Recall that the coinbase transaction does not have any input transactions, so in terms of transaction weighting, it will count as "one transaction" (outputting the block reward plus fees to the miner's address).
+Recall that the coinbase transaction does not have any input transactions, so in terms of transaction weighting, it will count as "one transaction output" (outputting the block reward plus fees to the miner's address).
 
 ## Target Difficulty Calculation
 
-The target is calculated from the difficulty by dividing the maximimum target in Billcoin by the difficulty.  The maximum target is 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF.  Difficulty is input in DECIMAL, not HEXADECIMAL, format (e.g., 15, not 0xF), although you are allowed to convert to hexadecimal internally if you find this easier.
+The target is calculated from the difficulty by dividing the maximimum target in Billcoin by the difficulty.  The maximum target is 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF.  Difficulty is input and displayed in DECIMAL, not HEXADECIMAL, format (e.g., 15, not 0xF), although you are allowed to convert to hexadecimal internally if you find this easier.
 
 For example, if the difficulty is 16, the target is 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF / 16 (0x10), or 0x0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF.
 
-Note that the maximum BillCoin target is different from the maximum Bitcoin target (0x00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF).  This is to make mining easier (mining with difficulty = 1 in BillCoin means that almost any value will be a valid hash) as well as to simplify the concept.  In BillCoin, the difficulty is also the mean number of Bernoulli trials necessary before meeting the objective of `H(block) < target` (e.g., if the difficulty is set to 100, the mean number of attempts to find a valid block will be 100).
+Note that the maximum BillCoin target is different from the maximum Bitcoin target (0x00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF).  This is to make mining easier (mining with difficulty = 1 in BillCoin means that almost any value will be a valid hash) as well as to simplify the concept.  In BillCoin, the difficulty is also approximately the mean number of Bernoulli trials necessary before meeting the objective of `H(block) < target` (e.g., if the difficulty is set to 100, the mean number of attempts to find a valid block will be ~ 100).
 
 ## Valid Block and Output
 
