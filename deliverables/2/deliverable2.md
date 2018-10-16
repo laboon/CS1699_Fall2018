@@ -98,7 +98,7 @@ A valid block must contain the following attributes in the correct (specified) o
 4. Difficulty
 5. Nonce
 6. concat root of sorted transaction list
-7. List of transactions (transaction inputs, transaction outputs, hash of transaction)
+7. List of transactions (including transaction inputs and transaction outputs)
 
 ### Sample Blocks From transaction_list.txt:
 
