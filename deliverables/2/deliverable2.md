@@ -70,7 +70,7 @@ dab45c1455517304246cb33d205f217849ed70025e45866b8125d9ddb54fadb5
 
 ## Calculating the Block Hash
 
-You should use the SHA-256 hashing algorithm on the concatenated result of: previous hash, number of inputs/outputs in the block, current timestamp, difficulty, nonce, and the concat root of the concatenation of all the transactions.  These values should not be delimited by any other characters (e.g., if previous hash is "0982" and number of transactions is "4", the concatenated string should be "09824" - *not* "0982,4", "0982 4" etc.
+You should use the SHA-256 hashing algorithm on the concatenated result of: previous hash, number of inputs/outputs in the block, current timestamp, difficulty, nonce, and the concat root of the concatenation of all the transactions.  These values should not be delimited by any other characters (e.g., if previous hash is "0982" and number of transaction input/outputs is "4", the concatenated string should be "09824" - *not* "0982,4", "0982 4" etc.
 
 ## Block Size Limit
 
