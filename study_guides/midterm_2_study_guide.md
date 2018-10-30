@@ -38,7 +38,7 @@ _The second (of three) midterms is on 6 Nov 2018.  You should study the topics b
    * Understand how mixing works, including weaknesses and why mixers use a single chunk size.
    * How does CoinJoin work?
 
-##. Achieving Consensus
+## Achieving Consensus
    * What are the different kinds of consensus that must be achieved for Bitcoin to operate properly?
    * What is Bitcoin Core?
    * What are BIPs?
