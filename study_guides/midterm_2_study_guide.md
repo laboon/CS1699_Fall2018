@@ -54,8 +54,10 @@ _The second (of three) midterms is on 6 Nov 2018.  You should study the topics b
    * Understand memory-hard puzzles such as scrypt and Cuckoo Cycles.
    * Given a "simple implementation" of scrypt or Cuckoo Cycle algorithm, be able to work through creating a hash.
    * What is proof-of-useful-work?  Be able to explain how a system like this might work.
+   * How does the Primecoin puzzle work?  Be able to explain what Cunningham Chains are.
    * What are non-outsourceable puzzles?  Be able to explain how one might work.
    * Understand how proof-of-stake works.
+   * What are the benefits of proof-of-stake?
    * What are the problems with proof-of-stake, especially in regards to the "nothing at stake" problem?
 
 ## Bitcoin as a Platform
