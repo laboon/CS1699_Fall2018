@@ -1,0 +1,128 @@
+Things to verify:
+1. Testing three different files: transaction_list.txt (provided to students), graded_transaction_list.txt, graded_small_transaction_list.txt
+2. Use the previous hash 003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2 for all inputs.
+3. Verify that the program does not crash on any input file (-15 for each file it crashes on)
+4. For each file - verify that candidate block is less than target (first three chars should be < 028 if difficulty = 100,  first three chars should be < 0041 if difficulty = 1000, first five chars should be < 0000A7 if difficulty = 100000) (-5 for each invalid candidate block hash displayed, up to -30).
+
+5. Verify that timestamp is *at least* the same as the milliseconds on the system (see command) -5 if not
+6. Verify that nonces are four characters (may be spaces) -10 if not
+7. Verify that they have implemented a good knapsack-solving algorithm (see description) -10 if not
+8. Verify each block contains at least one transaction (-5 for each that does not, up to -15)
+9. Verify all transactions except coinbase are included in block exist in transaction list file (-8 for any additional transactions, up to -16)
+10. Verify that the total number of inputs/outputs is correct and is the same as listed in the output (-5 each if not, up to -15)
+11. Verify that concat root is correct (run SHA256 - program to check included in /sample_code/hash directory in repo - on concatenation of all transactions in same order as displayed on screen) - -8 for each incorrect concat root up to -16
+12. Add up and verify that correct number of fees added for coinbase transaction (50 + all fees) -6 for each output that show incorrect fees up to -18
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_2]
+(20509) $ date +%s000
+1541613362000
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_2]
+(20510) $ java Mine graded_small_transaction_list.txt 1000 003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+Starting miner...
+mining loop...
+CANDIDATE BLOCK = Hash 002173d870346d8f9d0c985988611144fef76ed28d9b00816d450f64a44905ee
+---
+003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+11
+1541613373270
+1000
+  !N
+2acc59399ccbc28d4c5e3961acf549b91146a2536b3f7fd4ecfcda5e46606f24
+1F34duy2eeMz5mSrvFepVzy7Y1rBsnAyWC>64;16dpPH9xrVRLArQgppraMunY3Uj7PN2pj2>32,1HHPoDeR5gbDwjpPp7b3q9PoHnYoeecG8i>20
+155fzsEBHy9Ri2bMQ8uuuR3tv1YzcDywd4>5;1923qxU74HWWz75LgWTsPE4FT9Zyd6n6bv>1
+1H82cMM9dzeUmuDfp5GmG6msLAdKfN7uZ7>5;1GKztam9D8ZWK9GxsNoNZbVSVs9Pk1nAXp>2
+19G5kkYvjawZiYKhFeh8WmfBN31pdP94Jr>17;1aXzEKiDJKzkPxTZy9zGc3y1nCDwDPub2>14,1DWxysF7GPRYGShNxL5ux2N2JLRa9rbE6k>2
+;1333dGpHU6gQShR596zbKHXEeSihdtoyLb>70
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_2]
+(20511) $ java Mine graded_small_transaction_list.txt 100000 003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+Starting miner...
+mining loop...
+CANDIDATE BLOCK = Hash 0000864b17ee8424993ddfb25dbe45735275cf2b4b8d81491705f8706db6ef15
+---
+003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+11
+1541613390529
+100000
+ $md
+2acc59399ccbc28d4c5e3961acf549b91146a2536b3f7fd4ecfcda5e46606f24
+1F34duy2eeMz5mSrvFepVzy7Y1rBsnAyWC>64;16dpPH9xrVRLArQgppraMunY3Uj7PN2pj2>32,1HHPoDeR5gbDwjpPp7b3q9PoHnYoeecG8i>20
+155fzsEBHy9Ri2bMQ8uuuR3tv1YzcDywd4>5;1923qxU74HWWz75LgWTsPE4FT9Zyd6n6bv>1
+1H82cMM9dzeUmuDfp5GmG6msLAdKfN7uZ7>5;1GKztam9D8ZWK9GxsNoNZbVSVs9Pk1nAXp>2
+19G5kkYvjawZiYKhFeh8WmfBN31pdP94Jr>17;1aXzEKiDJKzkPxTZy9zGc3y1nCDwDPub2>14,1DWxysF7GPRYGShNxL5ux2N2JLRa9rbE6k>2
+;1333dGpHU6gQShR596zbKHXEeSihdtoyLb>70
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_2]
+(20512) $ java Mine graded_transaction_list.txt 100 003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+Starting miner...
+mining loop...
+CANDIDATE BLOCK = Hash 014bb1f802124c664c4e0020eb43e2af12bf46f7077735344dc2444bb124c746
+---
+003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+16
+1541613416294
+100
+   I
+7841d3fd939f748c8764da89b143db5ea63cded94655ba974083001df31b9cae
+1HLsDiYE8P61Z3mwqVuq1xtuoZkJZ8rX7P>100;1PfceCKGraSPEvx6nfjw5ZCLLy8Ct23Qd5>90
+1F34duy2eeMz5mSrvFepVzy7Y1rBsnAyWC>64;16dpPH9xrVRLArQgppraMunY3Uj7PN2pj2>32,1HHPoDeR5gbDwjpPp7b3q9PoHnYoeecG8i>20
+1J7fmT3Wv62u4p6FuwbVJQXhQE3HiH4AQs>60;1G1AndHMczVQYLGfYJzqkDjXrFifpMsTaZ>3,1A4WLCaR11ARbib283pnH8jy8s4TJEjjPz>50
+155fzsEBHy9Ri2bMQ8uuuR3tv1YzcDywd4>5;1923qxU74HWWz75LgWTsPE4FT9Zyd6n6bv>1
+1LdRcdxfbSnmCYYNdeYpUnztiYzVfBEQeC>20;1JCe8z4jJVNXSjohjM4i9Hh813dLCNx2Sy>10,1AC4fMwgY8j9onSbXEWeH6Zan8QGMSdmtA>5
+1H82cMM9dzeUmuDfp5GmG6msLAdKfN7uZ7>5;1GKztam9D8ZWK9GxsNoNZbVSVs9Pk1nAXp>2
+;1333dGpHU6gQShR596zbKHXEeSihdtoyLb>91
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_2]
+(20513) $ java Mine graded_transaction_list.txt 100000 003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+Starting miner...
+mining loop...
+CANDIDATE BLOCK = Hash 00006916636c2d889e83f37b3a9e23728761b7a3d8a9ed1e4f7e944dca036205
+---
+003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+16
+1541613427617
+100000
+ 3wH
+7841d3fd939f748c8764da89b143db5ea63cded94655ba974083001df31b9cae
+1HLsDiYE8P61Z3mwqVuq1xtuoZkJZ8rX7P>100;1PfceCKGraSPEvx6nfjw5ZCLLy8Ct23Qd5>90
+1F34duy2eeMz5mSrvFepVzy7Y1rBsnAyWC>64;16dpPH9xrVRLArQgppraMunY3Uj7PN2pj2>32,1HHPoDeR5gbDwjpPp7b3q9PoHnYoeecG8i>20
+1J7fmT3Wv62u4p6FuwbVJQXhQE3HiH4AQs>60;1G1AndHMczVQYLGfYJzqkDjXrFifpMsTaZ>3,1A4WLCaR11ARbib283pnH8jy8s4TJEjjPz>50
+155fzsEBHy9Ri2bMQ8uuuR3tv1YzcDywd4>5;1923qxU74HWWz75LgWTsPE4FT9Zyd6n6bv>1
+1LdRcdxfbSnmCYYNdeYpUnztiYzVfBEQeC>20;1JCe8z4jJVNXSjohjM4i9Hh813dLCNx2Sy>10,1AC4fMwgY8j9onSbXEWeH6Zan8QGMSdmtA>5
+1H82cMM9dzeUmuDfp5GmG6msLAdKfN7uZ7>5;1GKztam9D8ZWK9GxsNoNZbVSVs9Pk1nAXp>2
+;1333dGpHU6gQShR596zbKHXEeSihdtoyLb>91
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_2]
+(20514) $ java Mine transaction_list.txt 100 003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+Starting miner...
+mining loop...
+CANDIDATE BLOCK = Hash 01314cc897370acb76a4401514da247271bd4202dbf7e01ec2b222d9e728722a
+---
+003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+16
+1541613451670
+100
+   @
+5dba50d1d34ae0801833f27753acbdd4d0bb0a499e164f24896d39a31d466a37
+182mG8b9jm6ZfYAqRnLoZ8tFsxHxAXZcRy>100;1N3QPvVzXRAurG9JpN3CZGU8o5Fwh9JDwC>10,1CmMtdA8sZrQbbH3LCHfrpTGXr3CdqH7Aa>10,15d9uVAJowRYs7EYvTtBbfGWyG7e5YHwbA>10,1PJwzxwtCmvyx92hnFX3L9VMEeAUx9JhZo>50
+1Lrqp1LHYH7aJX5ajy7TNyzbNv4URr5Yjp>28,1Lrqp1LHYH7aJX5ajy7TNyzbNv4URr5Yjp>20;13fEqFzndapuffXZj5TjFrrQsmaubg7hGJ>30,1CDFt9ZWYp55gd9PD7e4t9aYKMSQJAsZNr>7
+1Khee1UxMsrvhN2tZCGZa4tZC41kumYNr9>100,1Khee1UxMsrvhN2tZCGZa4tZC41kumYNr9>100,1Khee1UxMsrvhN2tZCGZa4tZC41kumYNr9>100;14P72s4mMcKqs3SDCsX3h7qh8526gC8dve>225,13QxtTz5FnTsg8VyZRg8hPgunC8VW8nz2i>30,1BfTK9ftgnaXgK3Wj17Da4J9Mw5KmzLzfe>30
+;1333dGpHU6gQShR596zbKHXEeSihdtoyLb>96
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_2]
+(20515) $ java Mine transaction_list.txt 100000 003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+Starting miner...
+mining loop...
+CANDIDATE BLOCK = Hash 00003a161c8d73c40f40236860c91bc5a6f53ffc7bec22fcd2da4a48b7b229a9
+---
+003d6dd6a76508c315d1ff4b7ddf60574a9c82f3eec7f141f6cb2615d23e47e2
+16
+1541613457902
+100000
+ 9Rn
+5dba50d1d34ae0801833f27753acbdd4d0bb0a499e164f24896d39a31d466a37
+182mG8b9jm6ZfYAqRnLoZ8tFsxHxAXZcRy>100;1N3QPvVzXRAurG9JpN3CZGU8o5Fwh9JDwC>10,1CmMtdA8sZrQbbH3LCHfrpTGXr3CdqH7Aa>10,15d9uVAJowRYs7EYvTtBbfGWyG7e5YHwbA>10,1PJwzxwtCmvyx92hnFX3L9VMEeAUx9JhZo>50
+1Lrqp1LHYH7aJX5ajy7TNyzbNv4URr5Yjp>28,1Lrqp1LHYH7aJX5ajy7TNyzbNv4URr5Yjp>20;13fEqFzndapuffXZj5TjFrrQsmaubg7hGJ>30,1CDFt9ZWYp55gd9PD7e4t9aYKMSQJAsZNr>7
+1Khee1UxMsrvhN2tZCGZa4tZC41kumYNr9>100,1Khee1UxMsrvhN2tZCGZa4tZC41kumYNr9>100,1Khee1UxMsrvhN2tZCGZa4tZC41kumYNr9>100;14P72s4mMcKqs3SDCsX3h7qh8526gC8dve>225,13QxtTz5FnTsg8VyZRg8hPgunC8VW8nz2i>30,1BfTK9ftgnaXgK3Wj17Da4J9Mw5KmzLzfe>30
+;1333dGpHU6gQShR596zbKHXEeSihdtoyLb>96
