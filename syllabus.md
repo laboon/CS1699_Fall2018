@@ -171,21 +171,19 @@ _Although the instructor will make a best effort to have the class topic on the 
 
 ## Week 14 (Week of 26 Nov):
 
-1. Overview of the Course and the Future of Blockchain Technology
-   * Recent changes and roadmap of Bitcoin (Segregated Witness a.k.a. SegWit, Bitcoin / Bitcoin Cash fork, Lightning Network)
-   * The ethics of Bitcoin
-   * The economics of Bitcoin
-   * Current political climate and its impact on cryptocurrency
+1. GUEST LECTURE - Wenchao Wang - Solidity and Smart Contract Securit
 
 2. MIDTERM 3
 
 ## Week 15 (Week of 3 Dec):
 
-1. Societal Impacts _(READING: BCT, Chapter 11)_
+1.  Societal Impacts and the Future of Blockchain Technology _(READING: BCT, Chapter 11)_
    * Decentralization of institutions
    * Blockchain interaction with the "real world"
    * Economic impact
    * Political impact
+   * Recent changes and roadmap of Bitcoin (Segregated Witness a.k.a. SegWit, Bitcoin / Bitcoin Cash fork, Lightning Network)
+   * Current political climate and its impact on cryptocurrency
 
 2. Societal Impacts _(discussion class - ATTENDANCE MANDATORY)_
   * DUE: Blockchain Impact Paper
