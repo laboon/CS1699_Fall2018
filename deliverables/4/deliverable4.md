@@ -7,7 +7,7 @@ _Note: Assignments (printout and final git commit) are due at the beginning of c
 For the final assignment of this course, you have several options:
 
 1. Write a four to five page paper (double-spaced) on a specific impact of blockchain technology on the world (either current or possible) OR an in-depth examinination of specific blockchain or cryptocurrency project (other than Bitcoin), or aspect thereof.
-2. Develop a blockchain-based project - e.g. developing an ERC-20 token, adding functionality or tests to an existing blockchain project, developing a game on Ethereum, etc.
+2. Develop a blockchain-based project - e.g. developing an ERC-20 token, adding functionality or tests to an existing blockchain project, developing a game on Ethereum, etc.  If you do this, you should also turn in a paper which lists your name, the GitHub repository or other link to your project, and a short description (one to a few paragraphs) explaining what your project is and, if necessary, explaining how to use it.
 
 I recommend you discuss with me before starting on your project or paper if you are at all concerned that your project or paper topic might not be satisfactory.
 
@@ -42,7 +42,6 @@ Aspects that I will consider:
 1. Was the project of a reasonable difficulty? (e.g., fixing a typo on a Bitcoin comment, while commendable, would not be considered sufficient for a final project)
 2. Is the project done well?  That is, does it work correctly?
 3. Did you properly explain (in comments or your summary) what the system does or is supposed to do?
-4. 
 
 ### Paper Grading
 
