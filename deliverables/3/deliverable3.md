@@ -22,10 +22,30 @@ Compression function c:
 1. Phase 2 of compression: The char values of result (note: NOT lhs) and rhs (descending from rhs[7]) are XORed and put into the result.  By this, I mean result[0] is the result of XORing result[0] and rhs[7], result[1] the result of XORing result[1] and rhs[6], etc., for the LAST four chars of rhs)
 1. Phase 3 of compression: The char values of result (ascending) are XORed with the char values of result (descending).  By this, I mean that result[0] will be the result of result[0] XORed with result[3], result[1] the result of result[1] XORed with result[2], etc., for each of the bytes
 1. Note that this is not simultaneous - for example, result[0] should be XORed with result[3], then after this result[3] is XORed with result[0].  The result[0] that is XORed in the latter case has already been modified by the result[0] XORed with result[3] earlier.
-1. Merkle-Damgard strengthening output is in _hexadecimal_ and zero-padded.
+1. Merkle-Damgard strengthening output is in _hexadecimal_ and zero-padded.  Note that this should occur as part of the same final block (i.e., you should not generate a new block for strengthening).  Rather, you should take the length modulo n ^ 16, where n is the number of spaces available.  See Strengthening Description for more information and an example.
 1. All hexadecimal output shall consist of the characters `0123456789ABCDEF` (i.e., hex letters are uppercase)
 1. For output, the value of each result `char` is taken modulo 16 and the hexadecimal character corresponding to that value is added to the result.  For example, if the value in result[0] is 33, 33 % 16 = 1, which would be the character "1".  If the value is 31, 31 % 16 = 15, which equals F, and thus the character "F" is added.
 1. Output is a string consisting of four hexadecimal characters
+
+## Strengthening Description and Example
+
+You should take the number of remaining spaces (n) in the last block, then take the length of the original string  modulo 16^n (0x10 ^ n) (since that is the max hex value that can be stored). For example, in the below example, the length is 0x17 (23) but 0x17 % 0x10 (23 % 16) = 0x7, so we store a 7 there.  Trying to store a "17" would mean that we would have created a new block since we would have "overflowed" the space remaining.
+
+Example:
+
+```
+(1374) $ java LaboonHash "no more mr. nice guy..." -verbose
+	Padded string: no more mr. nice guy...7
+	Blocks: 
+	no more 
+	mr. nice
+	 guy...7
+	Iterating with 1AB0 / no more  = F74E
+	Iterating with F74E / mr. nice = F963
+	Iterating with F963 /  guy...7 = 5308
+	Final result: 5308
+LaboonHash hash = 5308
+```
 
 ### Verbosity Levels
 
