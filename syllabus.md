@@ -171,7 +171,7 @@ _Although the instructor will make a best effort to have the class topic on the 
 
 ## Week 14 (Week of 26 Nov):
 
-1. GUEST LECTURE - Wenchao Wang - Solidity and Smart Contract Securit
+1. GUEST LECTURE - Wenchao Wang - Solidity and Smart Contract Security
 
 2. MIDTERM 3
 

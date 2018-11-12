@@ -54,4 +54,4 @@ Aspects that I will consider:
 5. Have you used the concepts learned in class to support your arguments?
 5. Did you explain possible drawbacks or reasons that your thesis might be false?
 
-Note: I will *not* (and *never will*) take points off based on your point of view.  If you would like to argue that Bitcoin is an environmental disaster, or the 21st century of the Dutch Tulip Bubble, or whatever, I would love to hear it!  All I ask is that you write a well-supported paper that coherently and cogently makes your argument.
+Note: I will *not* (and *never will*) take points off based on your point of view.  If you would like to argue that Bitcoin is an environmental disaster, or the 21st century equivalent of the Dutch Tulip Bubble, or whatever, I would love to hear it!  All I ask is that you write a well-supported paper that coherently and cogently makes your argument.
