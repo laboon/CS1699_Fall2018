@@ -8,6 +8,14 @@ _Note: Assignments (printout and final git commit) are due at the beginning of c
 
 For this assignment, we are going write our own hashing function, LaboonHash, which uses Merkle-Damgard strengthening and Merkle-Damgard transforms.  This will be similar to SHA-256 and other SHA algorithms.  Using LaboonHash as a base hashing function, we will then make a memory-hard version of this hashing function, LaboonCrypt, which operates in a similar manner as `scrypt`.
 
+
+## Format
+Please hand in a printed-out (hardcopy) cover page with:
+* The name of the project ("CS1699 Deliverable 3: Non-SHA256 Puzzle")
+* Your name
+* Your GitHub username
+* A link to your private repository on GitHub with the Java files
+
 ## Part 1: LaboonHash
 
 LaboonHash accepts an arbitrary-length string, applies standard Merkle-Damgard strengthening, and applies the compression function, `c`, defined below.
