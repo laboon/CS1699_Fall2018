@@ -16,6 +16,10 @@ Please hand in a printed-out (hardcopy) cover page with:
 * Your GitHub username
 * A link to your private repository on GitHub with the Java files
 
+## Using Sample Code
+
+You are allowed to copy/paste/modify any sample code from the `./sample_code/*` subdirectories in order to complete this assignment.  Do not copy code from other sources.
+
 ## Part 1: LaboonHash
 
 LaboonHash accepts an arbitrary-length string, applies standard Merkle-Damgard strengthening, and applies the compression function, `c`, defined below.

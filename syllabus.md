@@ -156,7 +156,7 @@ _Although the instructor will make a best effort to have the class topic on the 
    * Ethereum - More powerful scripting language
    * Monero - Anonymous, not pseudonymous, transactions
    * Nano - Distributed Proof of Stake, multiple blockchains
-   * What is Bitcoin Maximalism? (Strong, Semi-Strong, Weak forms)
+   * What is Bitcoin Maximalism? 
 
 ## Week 13 (Week of 19 NOV):
 
