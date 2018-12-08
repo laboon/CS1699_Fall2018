@@ -1,0 +1,37 @@
+Number of points per section in parentheses
+Partial credit possible for each
+
+
+LaboonHash:
+
+(30) LaboonHash provides correct output for sample "no more mr. nice guy..." ():
+
+(5) LaboonHash provides correct output for "merry halloween" (07CB):
+
+(5) LaboonHash provides correct output for "" (1AB0):
+
+(5) LaboonHash provides correct output for "boo" (0102):
+
+(5) Verbose mode works correctly (see output):
+
+LaboonCrypt:
+
+(20) LaboonCrypt provides correct output for sample "meow" (9318):
+
+(5) LaboonCrypt provides correct output for "merry halloween" (B139):
+
+(5) LaboonCrypt provides correct output for "" (5BBF):
+
+(5) LaboonCrypt provides correct output for "boo" (AE26):
+
+(5) Verbose mode works correctly (see output):
+
+(5) Veryverbose mode works correctly (see output):
+
+(5) Ultraverbose mode works correctly (see output):
+
+
+Other issues:
+-5 Not submitted properly
+-5 Files named incorrectly
+-5 Does not handle arguments correctly (i.e. have to enter in different order)

@@ -1,0 +1,1119 @@
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20017) $ java LaboonHash "no more mr. nice guy..." -verbose
+	Padded string: no more mr. nice guy...7
+	Blocks:
+	no more
+	mr. nice
+	 guy...7
+	Iterating with 1AB0 / no more  = F74E
+	Iterating with F74E / mr. nice = F963
+	Iterating with F963 /  guy...7 = 5308
+	Final result: 5308
+LaboonHash hash = 5308
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20018) $ java LaboonHash ""
+LaboonHash hash = 1AB0
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20019) $ java LaboonHash "merry halloween"
+LaboonHash hash = 07CB
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20020) $ java LaboonHash "merry halloween" -verbose
+	Padded string: merry halloweenF
+	Blocks:
+	merry ha
+	lloweenF
+	Iterating with 1AB0 / merry ha = 6CB2
+	Iterating with 6CB2 / lloweenF = 07CB
+	Final result: 07CB
+LaboonHash hash = 07CB
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20021) $ java LaboonCrypt "merry halloween"
+LaboonCrypt hash: B139
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20022) $ java LaboonCrypt "meow"
+LaboonCrypt hash: 9318
+
+(20026) $ java LaboonCrypt ""
+LaboonCrypt hash: 5BBF
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20023) $ java LaboonCrypt "merry halloween" -verbose
+Initial array:
+07CB 7D47 B35C 2360 7275 5C82 2C97 EFAC 5A20 0035 2642 5D57
+906C 9570 CF85 1192 69A7 A92C 1830 4E45 6252 1267 D37C 4D80
+1F95 32A2 4627 8B3C 8040 D755 6F62 1F77 D08C 4B90 1EA5 3522
+4437 824C 8150 D565 6072 1A87 DA9C 49A0 1925 3832 4E47 825C
+8260 D375 6D82 1F97 D2AC 4620 1B35 3042 4757 8F6C 8F70 D085
+6B92 1EA7 D52C 4430 1245 3152 4567 807C 8A80 DA95 69A2 1927
+D83C 4E40 1255 3262 4377 8D8C 8F90 D2A5 6622 1B37 D04C 4750
+1F65 3F72 4087 8B9C 8EA0 D525 6432 1247 D15C 4560 1075 3A82
+4A97 89AC 8920 D835 6E42 1257 D26C 4370 1D85 3F92 42A7 862C
+8B30 D045 6752 1F67 DF7C 4080 1B95 3EA2 4527 843C 8240 D155
+6562 1077 DA8C 4A90 19A5 3922 4837 8E4C 8250 D265 6372 1D87
+DF9C 42A0 1625 3B32 4047 875C 8F60 DF75 6082 1B97 DEAC 4520
+Final array:
+7D47 7D47 B35C 7275 7275 5C82 5A20 EFAC 5A20 2642 2642 5D57
+906C 9570 CF85 1192 69A7 A92C 1830 4E45 1267 1267 D37C 4D80
+1F95 32A2 4627 8B3C 8040 D755 6F62 1F77 D08C 4B90 1EA5 3522
+4437 824C 8150 D565 6072 1A87 DA9C 49A0 1925 3832 4E47 825C
+8260 D375 6D82 1F97 D2AC 4620 1B35 3042 4757 8F6C 8F70 D085
+6B92 1EA7 D52C 4430 1245 3152 4567 807C 8A80 DA95 D83C 1927
+4E40 4E40 1255 3262 4377 8D8C D2A5 D2A5 6622 1B37 D04C 4750
+1F65 3F72 4087 8B9C 8EA0 D525 6432 1247 D15C 4560 1075 3A82
+4A97 89AC 8920 D835 6E42 1257 D26C 4370 1D85 3F92 42A7 862C
+D045 D045 6752 DF7C DF7C 4080 1B95 3EA2 4527 843C 8240 D155
+6562 1077 4A90 4A90 19A5 4837 4837 8E4C 8250 D265 6372 1D87
+DF9C 42A0 1625 3B32 875C 875C 8F60 DF75 6082 1B97 DEAC 4520
+LaboonCrypt hash: B139
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20024) $ java LaboonCrypt "merry halloween" -veryverbose
+Initial array:
+07CB 7D47 B35C 2360 7275 5C82 2C97 EFAC 5A20 0035 2642 5D57
+906C 9570 CF85 1192 69A7 A92C 1830 4E45 6252 1267 D37C 4D80
+1F95 32A2 4627 8B3C 8040 D755 6F62 1F77 D08C 4B90 1EA5 3522
+4437 824C 8150 D565 6072 1A87 DA9C 49A0 1925 3832 4E47 825C
+8260 D375 6D82 1F97 D2AC 4620 1B35 3042 4757 8F6C 8F70 D085
+6B92 1EA7 D52C 4430 1245 3152 4567 807C 8A80 DA95 69A2 1927
+D83C 4E40 1255 3262 4377 8D8C 8F90 D2A5 6622 1B37 D04C 4750
+1F65 3F72 4087 8B9C 8EA0 D525 6432 1247 D15C 4560 1075 3A82
+4A97 89AC 8920 D835 6E42 1257 D26C 4370 1D85 3F92 42A7 862C
+8B30 D045 6752 1F67 DF7C 4080 1B95 3EA2 4527 843C 8240 D155
+6562 1077 DA8C 4A90 19A5 3922 4837 8E4C 8250 D265 6372 1D87
+DF9C 42A0 1625 3B32 4047 875C 8F60 DF75 6082 1B97 DEAC 4520
+Moving 1199 down and 784 right - modifying [11, 4] from 4047 to 875C
+Moving 1111 down and 728 right - modifying [6, 0] from D83C to 4E40
+Moving 1254 down and 819 right - modifying [0, 3] from 2360 to 7275
+Moving 1254 down and 819 right - modifying [6, 6] from 8F90 to D2A5
+Moving 1331 down and 868 right - modifying [5, 10] from 69A2 to 1927
+Moving 352 down and 245 right - modifying [9, 3] from 1F67 to DF7C
+Moving 1144 down and 749 right - modifying [1, 8] from 6252 to 1267
+Moving 1067 down and 700 right - modifying [0, 0] from 07CB to 7D47
+Moving 1188 down and 777 right - modifying [0, 9] from 0035 to 2642
+Moving 1188 down and 777 right - modifying [0, 6] from 2C97 to EFAC
+Moving 1221 down and 798 right - modifying [9, 0] from 8B30 to D045
+Moving 1309 down and 854 right - modifying [10, 2] from DA8C to 4A90
+Moving 1111 down and 728 right - modifying [5, 10] from 1927 to D83C
+Moving 1111 down and 728 right - modifying [0, 6] from EFAC to 5A20
+Moving 1210 down and 791 right - modifying [10, 5] from 3922 to 4837
+Final array:
+7D47 7D47 B35C 7275 7275 5C82 5A20 EFAC 5A20 2642 2642 5D57
+906C 9570 CF85 1192 69A7 A92C 1830 4E45 1267 1267 D37C 4D80
+1F95 32A2 4627 8B3C 8040 D755 6F62 1F77 D08C 4B90 1EA5 3522
+4437 824C 8150 D565 6072 1A87 DA9C 49A0 1925 3832 4E47 825C
+8260 D375 6D82 1F97 D2AC 4620 1B35 3042 4757 8F6C 8F70 D085
+6B92 1EA7 D52C 4430 1245 3152 4567 807C 8A80 DA95 D83C 1927
+4E40 4E40 1255 3262 4377 8D8C D2A5 D2A5 6622 1B37 D04C 4750
+1F65 3F72 4087 8B9C 8EA0 D525 6432 1247 D15C 4560 1075 3A82
+4A97 89AC 8920 D835 6E42 1257 D26C 4370 1D85 3F92 42A7 862C
+D045 D045 6752 DF7C DF7C 4080 1B95 3EA2 4527 843C 8240 D155
+6562 1077 4A90 4A90 19A5 4837 4837 8E4C 8250 D265 6372 1D87
+DF9C 42A0 1625 3B32 875C 875C 8F60 DF75 6082 1B97 DEAC 4520
+LaboonCrypt hash: B139
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20025) $ java LaboonCrypt "merry halloween" -ultraverbose
+	Padded string: merry halloweenF
+	Blocks:
+	merry ha
+	lloweenF
+	Iterating with 1AB0 / merry ha = 6CB2
+	Iterating with 6CB2 / lloweenF = 07CB
+	Final result: 07CB
+	Padded string: 07CB0004
+	Blocks:
+	07CB0004
+	Iterating with 1AB0 / 07CB0004 = 7D47
+	Final result: 7D47
+	Padded string: 7D470004
+	Blocks:
+	7D470004
+	Iterating with 1AB0 / 7D470004 = B35C
+	Final result: B35C
+	Padded string: B35C0004
+	Blocks:
+	B35C0004
+	Iterating with 1AB0 / B35C0004 = 2360
+	Final result: 2360
+	Padded string: 23600004
+	Blocks:
+	23600004
+	Iterating with 1AB0 / 23600004 = 7275
+	Final result: 7275
+	Padded string: 72750004
+	Blocks:
+	72750004
+	Iterating with 1AB0 / 72750004 = 5C82
+	Final result: 5C82
+	Padded string: 5C820004
+	Blocks:
+	5C820004
+	Iterating with 1AB0 / 5C820004 = 2C97
+	Final result: 2C97
+	Padded string: 2C970004
+	Blocks:
+	2C970004
+	Iterating with 1AB0 / 2C970004 = EFAC
+	Final result: EFAC
+	Padded string: EFAC0004
+	Blocks:
+	EFAC0004
+	Iterating with 1AB0 / EFAC0004 = 5A20
+	Final result: 5A20
+	Padded string: 5A200004
+	Blocks:
+	5A200004
+	Iterating with 1AB0 / 5A200004 = 0035
+	Final result: 0035
+	Padded string: 00350004
+	Blocks:
+	00350004
+	Iterating with 1AB0 / 00350004 = 2642
+	Final result: 2642
+	Padded string: 26420004
+	Blocks:
+	26420004
+	Iterating with 1AB0 / 26420004 = 5D57
+	Final result: 5D57
+	Padded string: 5D570004
+	Blocks:
+	5D570004
+	Iterating with 1AB0 / 5D570004 = 906C
+	Final result: 906C
+	Padded string: 906C0004
+	Blocks:
+	906C0004
+	Iterating with 1AB0 / 906C0004 = 9570
+	Final result: 9570
+	Padded string: 95700004
+	Blocks:
+	95700004
+	Iterating with 1AB0 / 95700004 = CF85
+	Final result: CF85
+	Padded string: CF850004
+	Blocks:
+	CF850004
+	Iterating with 1AB0 / CF850004 = 1192
+	Final result: 1192
+	Padded string: 11920004
+	Blocks:
+	11920004
+	Iterating with 1AB0 / 11920004 = 69A7
+	Final result: 69A7
+	Padded string: 69A70004
+	Blocks:
+	69A70004
+	Iterating with 1AB0 / 69A70004 = A92C
+	Final result: A92C
+	Padded string: A92C0004
+	Blocks:
+	A92C0004
+	Iterating with 1AB0 / A92C0004 = 1830
+	Final result: 1830
+	Padded string: 18300004
+	Blocks:
+	18300004
+	Iterating with 1AB0 / 18300004 = 4E45
+	Final result: 4E45
+	Padded string: 4E450004
+	Blocks:
+	4E450004
+	Iterating with 1AB0 / 4E450004 = 6252
+	Final result: 6252
+	Padded string: 62520004
+	Blocks:
+	62520004
+	Iterating with 1AB0 / 62520004 = 1267
+	Final result: 1267
+	Padded string: 12670004
+	Blocks:
+	12670004
+	Iterating with 1AB0 / 12670004 = D37C
+	Final result: D37C
+	Padded string: D37C0004
+	Blocks:
+	D37C0004
+	Iterating with 1AB0 / D37C0004 = 4D80
+	Final result: 4D80
+	Padded string: 4D800004
+	Blocks:
+	4D800004
+	Iterating with 1AB0 / 4D800004 = 1F95
+	Final result: 1F95
+	Padded string: 1F950004
+	Blocks:
+	1F950004
+	Iterating with 1AB0 / 1F950004 = 32A2
+	Final result: 32A2
+	Padded string: 32A20004
+	Blocks:
+	32A20004
+	Iterating with 1AB0 / 32A20004 = 4627
+	Final result: 4627
+	Padded string: 46270004
+	Blocks:
+	46270004
+	Iterating with 1AB0 / 46270004 = 8B3C
+	Final result: 8B3C
+	Padded string: 8B3C0004
+	Blocks:
+	8B3C0004
+	Iterating with 1AB0 / 8B3C0004 = 8040
+	Final result: 8040
+	Padded string: 80400004
+	Blocks:
+	80400004
+	Iterating with 1AB0 / 80400004 = D755
+	Final result: D755
+	Padded string: D7550004
+	Blocks:
+	D7550004
+	Iterating with 1AB0 / D7550004 = 6F62
+	Final result: 6F62
+	Padded string: 6F620004
+	Blocks:
+	6F620004
+	Iterating with 1AB0 / 6F620004 = 1F77
+	Final result: 1F77
+	Padded string: 1F770004
+	Blocks:
+	1F770004
+	Iterating with 1AB0 / 1F770004 = D08C
+	Final result: D08C
+	Padded string: D08C0004
+	Blocks:
+	D08C0004
+	Iterating with 1AB0 / D08C0004 = 4B90
+	Final result: 4B90
+	Padded string: 4B900004
+	Blocks:
+	4B900004
+	Iterating with 1AB0 / 4B900004 = 1EA5
+	Final result: 1EA5
+	Padded string: 1EA50004
+	Blocks:
+	1EA50004
+	Iterating with 1AB0 / 1EA50004 = 3522
+	Final result: 3522
+	Padded string: 35220004
+	Blocks:
+	35220004
+	Iterating with 1AB0 / 35220004 = 4437
+	Final result: 4437
+	Padded string: 44370004
+	Blocks:
+	44370004
+	Iterating with 1AB0 / 44370004 = 824C
+	Final result: 824C
+	Padded string: 824C0004
+	Blocks:
+	824C0004
+	Iterating with 1AB0 / 824C0004 = 8150
+	Final result: 8150
+	Padded string: 81500004
+	Blocks:
+	81500004
+	Iterating with 1AB0 / 81500004 = D565
+	Final result: D565
+	Padded string: D5650004
+	Blocks:
+	D5650004
+	Iterating with 1AB0 / D5650004 = 6072
+	Final result: 6072
+	Padded string: 60720004
+	Blocks:
+	60720004
+	Iterating with 1AB0 / 60720004 = 1A87
+	Final result: 1A87
+	Padded string: 1A870004
+	Blocks:
+	1A870004
+	Iterating with 1AB0 / 1A870004 = DA9C
+	Final result: DA9C
+	Padded string: DA9C0004
+	Blocks:
+	DA9C0004
+	Iterating with 1AB0 / DA9C0004 = 49A0
+	Final result: 49A0
+	Padded string: 49A00004
+	Blocks:
+	49A00004
+	Iterating with 1AB0 / 49A00004 = 1925
+	Final result: 1925
+	Padded string: 19250004
+	Blocks:
+	19250004
+	Iterating with 1AB0 / 19250004 = 3832
+	Final result: 3832
+	Padded string: 38320004
+	Blocks:
+	38320004
+	Iterating with 1AB0 / 38320004 = 4E47
+	Final result: 4E47
+	Padded string: 4E470004
+	Blocks:
+	4E470004
+	Iterating with 1AB0 / 4E470004 = 825C
+	Final result: 825C
+	Padded string: 825C0004
+	Blocks:
+	825C0004
+	Iterating with 1AB0 / 825C0004 = 8260
+	Final result: 8260
+	Padded string: 82600004
+	Blocks:
+	82600004
+	Iterating with 1AB0 / 82600004 = D375
+	Final result: D375
+	Padded string: D3750004
+	Blocks:
+	D3750004
+	Iterating with 1AB0 / D3750004 = 6D82
+	Final result: 6D82
+	Padded string: 6D820004
+	Blocks:
+	6D820004
+	Iterating with 1AB0 / 6D820004 = 1F97
+	Final result: 1F97
+	Padded string: 1F970004
+	Blocks:
+	1F970004
+	Iterating with 1AB0 / 1F970004 = D2AC
+	Final result: D2AC
+	Padded string: D2AC0004
+	Blocks:
+	D2AC0004
+	Iterating with 1AB0 / D2AC0004 = 4620
+	Final result: 4620
+	Padded string: 46200004
+	Blocks:
+	46200004
+	Iterating with 1AB0 / 46200004 = 1B35
+	Final result: 1B35
+	Padded string: 1B350004
+	Blocks:
+	1B350004
+	Iterating with 1AB0 / 1B350004 = 3042
+	Final result: 3042
+	Padded string: 30420004
+	Blocks:
+	30420004
+	Iterating with 1AB0 / 30420004 = 4757
+	Final result: 4757
+	Padded string: 47570004
+	Blocks:
+	47570004
+	Iterating with 1AB0 / 47570004 = 8F6C
+	Final result: 8F6C
+	Padded string: 8F6C0004
+	Blocks:
+	8F6C0004
+	Iterating with 1AB0 / 8F6C0004 = 8F70
+	Final result: 8F70
+	Padded string: 8F700004
+	Blocks:
+	8F700004
+	Iterating with 1AB0 / 8F700004 = D085
+	Final result: D085
+	Padded string: D0850004
+	Blocks:
+	D0850004
+	Iterating with 1AB0 / D0850004 = 6B92
+	Final result: 6B92
+	Padded string: 6B920004
+	Blocks:
+	6B920004
+	Iterating with 1AB0 / 6B920004 = 1EA7
+	Final result: 1EA7
+	Padded string: 1EA70004
+	Blocks:
+	1EA70004
+	Iterating with 1AB0 / 1EA70004 = D52C
+	Final result: D52C
+	Padded string: D52C0004
+	Blocks:
+	D52C0004
+	Iterating with 1AB0 / D52C0004 = 4430
+	Final result: 4430
+	Padded string: 44300004
+	Blocks:
+	44300004
+	Iterating with 1AB0 / 44300004 = 1245
+	Final result: 1245
+	Padded string: 12450004
+	Blocks:
+	12450004
+	Iterating with 1AB0 / 12450004 = 3152
+	Final result: 3152
+	Padded string: 31520004
+	Blocks:
+	31520004
+	Iterating with 1AB0 / 31520004 = 4567
+	Final result: 4567
+	Padded string: 45670004
+	Blocks:
+	45670004
+	Iterating with 1AB0 / 45670004 = 807C
+	Final result: 807C
+	Padded string: 807C0004
+	Blocks:
+	807C0004
+	Iterating with 1AB0 / 807C0004 = 8A80
+	Final result: 8A80
+	Padded string: 8A800004
+	Blocks:
+	8A800004
+	Iterating with 1AB0 / 8A800004 = DA95
+	Final result: DA95
+	Padded string: DA950004
+	Blocks:
+	DA950004
+	Iterating with 1AB0 / DA950004 = 69A2
+	Final result: 69A2
+	Padded string: 69A20004
+	Blocks:
+	69A20004
+	Iterating with 1AB0 / 69A20004 = 1927
+	Final result: 1927
+	Padded string: 19270004
+	Blocks:
+	19270004
+	Iterating with 1AB0 / 19270004 = D83C
+	Final result: D83C
+	Padded string: D83C0004
+	Blocks:
+	D83C0004
+	Iterating with 1AB0 / D83C0004 = 4E40
+	Final result: 4E40
+	Padded string: 4E400004
+	Blocks:
+	4E400004
+	Iterating with 1AB0 / 4E400004 = 1255
+	Final result: 1255
+	Padded string: 12550004
+	Blocks:
+	12550004
+	Iterating with 1AB0 / 12550004 = 3262
+	Final result: 3262
+	Padded string: 32620004
+	Blocks:
+	32620004
+	Iterating with 1AB0 / 32620004 = 4377
+	Final result: 4377
+	Padded string: 43770004
+	Blocks:
+	43770004
+	Iterating with 1AB0 / 43770004 = 8D8C
+	Final result: 8D8C
+	Padded string: 8D8C0004
+	Blocks:
+	8D8C0004
+	Iterating with 1AB0 / 8D8C0004 = 8F90
+	Final result: 8F90
+	Padded string: 8F900004
+	Blocks:
+	8F900004
+	Iterating with 1AB0 / 8F900004 = D2A5
+	Final result: D2A5
+	Padded string: D2A50004
+	Blocks:
+	D2A50004
+	Iterating with 1AB0 / D2A50004 = 6622
+	Final result: 6622
+	Padded string: 66220004
+	Blocks:
+	66220004
+	Iterating with 1AB0 / 66220004 = 1B37
+	Final result: 1B37
+	Padded string: 1B370004
+	Blocks:
+	1B370004
+	Iterating with 1AB0 / 1B370004 = D04C
+	Final result: D04C
+	Padded string: D04C0004
+	Blocks:
+	D04C0004
+	Iterating with 1AB0 / D04C0004 = 4750
+	Final result: 4750
+	Padded string: 47500004
+	Blocks:
+	47500004
+	Iterating with 1AB0 / 47500004 = 1F65
+	Final result: 1F65
+	Padded string: 1F650004
+	Blocks:
+	1F650004
+	Iterating with 1AB0 / 1F650004 = 3F72
+	Final result: 3F72
+	Padded string: 3F720004
+	Blocks:
+	3F720004
+	Iterating with 1AB0 / 3F720004 = 4087
+	Final result: 4087
+	Padded string: 40870004
+	Blocks:
+	40870004
+	Iterating with 1AB0 / 40870004 = 8B9C
+	Final result: 8B9C
+	Padded string: 8B9C0004
+	Blocks:
+	8B9C0004
+	Iterating with 1AB0 / 8B9C0004 = 8EA0
+	Final result: 8EA0
+	Padded string: 8EA00004
+	Blocks:
+	8EA00004
+	Iterating with 1AB0 / 8EA00004 = D525
+	Final result: D525
+	Padded string: D5250004
+	Blocks:
+	D5250004
+	Iterating with 1AB0 / D5250004 = 6432
+	Final result: 6432
+	Padded string: 64320004
+	Blocks:
+	64320004
+	Iterating with 1AB0 / 64320004 = 1247
+	Final result: 1247
+	Padded string: 12470004
+	Blocks:
+	12470004
+	Iterating with 1AB0 / 12470004 = D15C
+	Final result: D15C
+	Padded string: D15C0004
+	Blocks:
+	D15C0004
+	Iterating with 1AB0 / D15C0004 = 4560
+	Final result: 4560
+	Padded string: 45600004
+	Blocks:
+	45600004
+	Iterating with 1AB0 / 45600004 = 1075
+	Final result: 1075
+	Padded string: 10750004
+	Blocks:
+	10750004
+	Iterating with 1AB0 / 10750004 = 3A82
+	Final result: 3A82
+	Padded string: 3A820004
+	Blocks:
+	3A820004
+	Iterating with 1AB0 / 3A820004 = 4A97
+	Final result: 4A97
+	Padded string: 4A970004
+	Blocks:
+	4A970004
+	Iterating with 1AB0 / 4A970004 = 89AC
+	Final result: 89AC
+	Padded string: 89AC0004
+	Blocks:
+	89AC0004
+	Iterating with 1AB0 / 89AC0004 = 8920
+	Final result: 8920
+	Padded string: 89200004
+	Blocks:
+	89200004
+	Iterating with 1AB0 / 89200004 = D835
+	Final result: D835
+	Padded string: D8350004
+	Blocks:
+	D8350004
+	Iterating with 1AB0 / D8350004 = 6E42
+	Final result: 6E42
+	Padded string: 6E420004
+	Blocks:
+	6E420004
+	Iterating with 1AB0 / 6E420004 = 1257
+	Final result: 1257
+	Padded string: 12570004
+	Blocks:
+	12570004
+	Iterating with 1AB0 / 12570004 = D26C
+	Final result: D26C
+	Padded string: D26C0004
+	Blocks:
+	D26C0004
+	Iterating with 1AB0 / D26C0004 = 4370
+	Final result: 4370
+	Padded string: 43700004
+	Blocks:
+	43700004
+	Iterating with 1AB0 / 43700004 = 1D85
+	Final result: 1D85
+	Padded string: 1D850004
+	Blocks:
+	1D850004
+	Iterating with 1AB0 / 1D850004 = 3F92
+	Final result: 3F92
+	Padded string: 3F920004
+	Blocks:
+	3F920004
+	Iterating with 1AB0 / 3F920004 = 42A7
+	Final result: 42A7
+	Padded string: 42A70004
+	Blocks:
+	42A70004
+	Iterating with 1AB0 / 42A70004 = 862C
+	Final result: 862C
+	Padded string: 862C0004
+	Blocks:
+	862C0004
+	Iterating with 1AB0 / 862C0004 = 8B30
+	Final result: 8B30
+	Padded string: 8B300004
+	Blocks:
+	8B300004
+	Iterating with 1AB0 / 8B300004 = D045
+	Final result: D045
+	Padded string: D0450004
+	Blocks:
+	D0450004
+	Iterating with 1AB0 / D0450004 = 6752
+	Final result: 6752
+	Padded string: 67520004
+	Blocks:
+	67520004
+	Iterating with 1AB0 / 67520004 = 1F67
+	Final result: 1F67
+	Padded string: 1F670004
+	Blocks:
+	1F670004
+	Iterating with 1AB0 / 1F670004 = DF7C
+	Final result: DF7C
+	Padded string: DF7C0004
+	Blocks:
+	DF7C0004
+	Iterating with 1AB0 / DF7C0004 = 4080
+	Final result: 4080
+	Padded string: 40800004
+	Blocks:
+	40800004
+	Iterating with 1AB0 / 40800004 = 1B95
+	Final result: 1B95
+	Padded string: 1B950004
+	Blocks:
+	1B950004
+	Iterating with 1AB0 / 1B950004 = 3EA2
+	Final result: 3EA2
+	Padded string: 3EA20004
+	Blocks:
+	3EA20004
+	Iterating with 1AB0 / 3EA20004 = 4527
+	Final result: 4527
+	Padded string: 45270004
+	Blocks:
+	45270004
+	Iterating with 1AB0 / 45270004 = 843C
+	Final result: 843C
+	Padded string: 843C0004
+	Blocks:
+	843C0004
+	Iterating with 1AB0 / 843C0004 = 8240
+	Final result: 8240
+	Padded string: 82400004
+	Blocks:
+	82400004
+	Iterating with 1AB0 / 82400004 = D155
+	Final result: D155
+	Padded string: D1550004
+	Blocks:
+	D1550004
+	Iterating with 1AB0 / D1550004 = 6562
+	Final result: 6562
+	Padded string: 65620004
+	Blocks:
+	65620004
+	Iterating with 1AB0 / 65620004 = 1077
+	Final result: 1077
+	Padded string: 10770004
+	Blocks:
+	10770004
+	Iterating with 1AB0 / 10770004 = DA8C
+	Final result: DA8C
+	Padded string: DA8C0004
+	Blocks:
+	DA8C0004
+	Iterating with 1AB0 / DA8C0004 = 4A90
+	Final result: 4A90
+	Padded string: 4A900004
+	Blocks:
+	4A900004
+	Iterating with 1AB0 / 4A900004 = 19A5
+	Final result: 19A5
+	Padded string: 19A50004
+	Blocks:
+	19A50004
+	Iterating with 1AB0 / 19A50004 = 3922
+	Final result: 3922
+	Padded string: 39220004
+	Blocks:
+	39220004
+	Iterating with 1AB0 / 39220004 = 4837
+	Final result: 4837
+	Padded string: 48370004
+	Blocks:
+	48370004
+	Iterating with 1AB0 / 48370004 = 8E4C
+	Final result: 8E4C
+	Padded string: 8E4C0004
+	Blocks:
+	8E4C0004
+	Iterating with 1AB0 / 8E4C0004 = 8250
+	Final result: 8250
+	Padded string: 82500004
+	Blocks:
+	82500004
+	Iterating with 1AB0 / 82500004 = D265
+	Final result: D265
+	Padded string: D2650004
+	Blocks:
+	D2650004
+	Iterating with 1AB0 / D2650004 = 6372
+	Final result: 6372
+	Padded string: 63720004
+	Blocks:
+	63720004
+	Iterating with 1AB0 / 63720004 = 1D87
+	Final result: 1D87
+	Padded string: 1D870004
+	Blocks:
+	1D870004
+	Iterating with 1AB0 / 1D870004 = DF9C
+	Final result: DF9C
+	Padded string: DF9C0004
+	Blocks:
+	DF9C0004
+	Iterating with 1AB0 / DF9C0004 = 42A0
+	Final result: 42A0
+	Padded string: 42A00004
+	Blocks:
+	42A00004
+	Iterating with 1AB0 / 42A00004 = 1625
+	Final result: 1625
+	Padded string: 16250004
+	Blocks:
+	16250004
+	Iterating with 1AB0 / 16250004 = 3B32
+	Final result: 3B32
+	Padded string: 3B320004
+	Blocks:
+	3B320004
+	Iterating with 1AB0 / 3B320004 = 4047
+	Final result: 4047
+	Padded string: 40470004
+	Blocks:
+	40470004
+	Iterating with 1AB0 / 40470004 = 875C
+	Final result: 875C
+	Padded string: 875C0004
+	Blocks:
+	875C0004
+	Iterating with 1AB0 / 875C0004 = 8F60
+	Final result: 8F60
+	Padded string: 8F600004
+	Blocks:
+	8F600004
+	Iterating with 1AB0 / 8F600004 = DF75
+	Final result: DF75
+	Padded string: DF750004
+	Blocks:
+	DF750004
+	Iterating with 1AB0 / DF750004 = 6082
+	Final result: 6082
+	Padded string: 60820004
+	Blocks:
+	60820004
+	Iterating with 1AB0 / 60820004 = 1B97
+	Final result: 1B97
+	Padded string: 1B970004
+	Blocks:
+	1B970004
+	Iterating with 1AB0 / 1B970004 = DEAC
+	Final result: DEAC
+	Padded string: DEAC0004
+	Blocks:
+	DEAC0004
+	Iterating with 1AB0 / DEAC0004 = 4520
+	Final result: 4520
+	Padded string: 45200004
+	Blocks:
+	45200004
+	Iterating with 1AB0 / 45200004 = 1435
+	Final result: 1435
+Initial array:
+07CB 7D47 B35C 2360 7275 5C82 2C97 EFAC 5A20 0035 2642 5D57
+906C 9570 CF85 1192 69A7 A92C 1830 4E45 6252 1267 D37C 4D80
+1F95 32A2 4627 8B3C 8040 D755 6F62 1F77 D08C 4B90 1EA5 3522
+4437 824C 8150 D565 6072 1A87 DA9C 49A0 1925 3832 4E47 825C
+8260 D375 6D82 1F97 D2AC 4620 1B35 3042 4757 8F6C 8F70 D085
+6B92 1EA7 D52C 4430 1245 3152 4567 807C 8A80 DA95 69A2 1927
+D83C 4E40 1255 3262 4377 8D8C 8F90 D2A5 6622 1B37 D04C 4750
+1F65 3F72 4087 8B9C 8EA0 D525 6432 1247 D15C 4560 1075 3A82
+4A97 89AC 8920 D835 6E42 1257 D26C 4370 1D85 3F92 42A7 862C
+8B30 D045 6752 1F67 DF7C 4080 1B95 3EA2 4527 843C 8240 D155
+6562 1077 DA8C 4A90 19A5 3922 4837 8E4C 8250 D265 6372 1D87
+DF9C 42A0 1625 3B32 4047 875C 8F60 DF75 6082 1B97 DEAC 4520
+	Padded string: 40470004
+	Blocks:
+	40470004
+	Iterating with 1AB0 / 40470004 = 875C
+	Final result: 875C
+Moving 1199 down and 784 right - modifying [11, 4] from 4047 to 875C
+	Padded string: D83C0004
+	Blocks:
+	D83C0004
+	Iterating with 1AB0 / D83C0004 = 4E40
+	Final result: 4E40
+Moving 1111 down and 728 right - modifying [6, 0] from D83C to 4E40
+	Padded string: 23600004
+	Blocks:
+	23600004
+	Iterating with 1AB0 / 23600004 = 7275
+	Final result: 7275
+Moving 1254 down and 819 right - modifying [0, 3] from 2360 to 7275
+	Padded string: 8F900004
+	Blocks:
+	8F900004
+	Iterating with 1AB0 / 8F900004 = D2A5
+	Final result: D2A5
+Moving 1254 down and 819 right - modifying [6, 6] from 8F90 to D2A5
+	Padded string: 69A20004
+	Blocks:
+	69A20004
+	Iterating with 1AB0 / 69A20004 = 1927
+	Final result: 1927
+Moving 1331 down and 868 right - modifying [5, 10] from 69A2 to 1927
+	Padded string: 1F670004
+	Blocks:
+	1F670004
+	Iterating with 1AB0 / 1F670004 = DF7C
+	Final result: DF7C
+Moving 352 down and 245 right - modifying [9, 3] from 1F67 to DF7C
+	Padded string: 62520004
+	Blocks:
+	62520004
+	Iterating with 1AB0 / 62520004 = 1267
+	Final result: 1267
+Moving 1144 down and 749 right - modifying [1, 8] from 6252 to 1267
+	Padded string: 07CB0004
+	Blocks:
+	07CB0004
+	Iterating with 1AB0 / 07CB0004 = 7D47
+	Final result: 7D47
+Moving 1067 down and 700 right - modifying [0, 0] from 07CB to 7D47
+	Padded string: 00350004
+	Blocks:
+	00350004
+	Iterating with 1AB0 / 00350004 = 2642
+	Final result: 2642
+Moving 1188 down and 777 right - modifying [0, 9] from 0035 to 2642
+	Padded string: 2C970004
+	Blocks:
+	2C970004
+	Iterating with 1AB0 / 2C970004 = EFAC
+	Final result: EFAC
+Moving 1188 down and 777 right - modifying [0, 6] from 2C97 to EFAC
+	Padded string: 8B300004
+	Blocks:
+	8B300004
+	Iterating with 1AB0 / 8B300004 = D045
+	Final result: D045
+Moving 1221 down and 798 right - modifying [9, 0] from 8B30 to D045
+	Padded string: DA8C0004
+	Blocks:
+	DA8C0004
+	Iterating with 1AB0 / DA8C0004 = 4A90
+	Final result: 4A90
+Moving 1309 down and 854 right - modifying [10, 2] from DA8C to 4A90
+	Padded string: 19270004
+	Blocks:
+	19270004
+	Iterating with 1AB0 / 19270004 = D83C
+	Final result: D83C
+Moving 1111 down and 728 right - modifying [5, 10] from 1927 to D83C
+	Padded string: EFAC0004
+	Blocks:
+	EFAC0004
+	Iterating with 1AB0 / EFAC0004 = 5A20
+	Final result: 5A20
+Moving 1111 down and 728 right - modifying [0, 6] from EFAC to 5A20
+	Padded string: 39220004
+	Blocks:
+	39220004
+	Iterating with 1AB0 / 39220004 = 4837
+	Final result: 4837
+Moving 1210 down and 791 right - modifying [10, 5] from 3922 to 4837
+Final array:
+7D47 7D47 B35C 7275 7275 5C82 5A20 EFAC 5A20 2642 2642 5D57
+906C 9570 CF85 1192 69A7 A92C 1830 4E45 1267 1267 D37C 4D80
+1F95 32A2 4627 8B3C 8040 D755 6F62 1F77 D08C 4B90 1EA5 3522
+4437 824C 8150 D565 6072 1A87 DA9C 49A0 1925 3832 4E47 825C
+8260 D375 6D82 1F97 D2AC 4620 1B35 3042 4757 8F6C 8F70 D085
+6B92 1EA7 D52C 4430 1245 3152 4567 807C 8A80 DA95 D83C 1927
+4E40 4E40 1255 3262 4377 8D8C D2A5 D2A5 6622 1B37 D04C 4750
+1F65 3F72 4087 8B9C 8EA0 D525 6432 1247 D15C 4560 1075 3A82
+4A97 89AC 8920 D835 6E42 1257 D26C 4370 1D85 3F92 42A7 862C
+D045 D045 6752 DF7C DF7C 4080 1B95 3EA2 4527 843C 8240 D155
+6562 1077 4A90 4A90 19A5 4837 4837 8E4C 8250 D265 6372 1D87
+DF9C 42A0 1625 3B32 875C 875C 8F60 DF75 6082 1B97 DEAC 4520
+	Padded string: 7D477D47B35C727572755C825A20EFAC5A20264226425D57906C9570CF85119269A7A92C18304E4512671267D37C4D801F9532A246278B3C8040D7556F621F77D08C4B901EA535224437824C8150D56560721A87DA9C49A0192538324E47825C8260D3756D821F97D2AC46201B35304247578F6C8F70D0856B921EA7D52C4430124531524567807C8A80DA95D83C19274E404E401255326243778D8CD2A5D2A566221B37D04C47501F653F7240878B9C8EA0D52564321247D15C456010753A824A9789AC8920D8356E421257D26C43701D853F9242A7862CD045D0456752DF7CDF7C40801B953EA24527843C8240D155656210774A904A9019A5483748378E4C8250D26563721D87DF9C42A016253B32875C875C8F60DF7560821B97DEAC4520
+	Blocks:
+	7D477D47
+	B35C7275
+	72755C82
+	5A20EFAC
+	5A202642
+	26425D57
+	906C9570
+	CF851192
+	69A7A92C
+	18304E45
+	12671267
+	D37C4D80
+	1F9532A2
+	46278B3C
+	8040D755
+	6F621F77
+	D08C4B90
+	1EA53522
+	4437824C
+	8150D565
+	60721A87
+	DA9C49A0
+	19253832
+	4E47825C
+	8260D375
+	6D821F97
+	D2AC4620
+	1B353042
+	47578F6C
+	8F70D085
+	6B921EA7
+	D52C4430
+	12453152
+	4567807C
+	8A80DA95
+	D83C1927
+	4E404E40
+	12553262
+	43778D8C
+	D2A5D2A5
+	66221B37
+	D04C4750
+	1F653F72
+	40878B9C
+	8EA0D525
+	64321247
+	D15C4560
+	10753A82
+	4A9789AC
+	8920D835
+	6E421257
+	D26C4370
+	1D853F92
+	42A7862C
+	D045D045
+	6752DF7C
+	DF7C4080
+	1B953EA2
+	4527843C
+	8240D155
+	65621077
+	4A904A90
+	19A54837
+	48378E4C
+	8250D265
+	63721D87
+	DF9C42A0
+	16253B32
+	875C875C
+	8F60DF75
+	60821B97
+	DEAC4520
+	Iterating with 1AB0 / 7D477D47 = F31F
+	Iterating with F31F / B35C7275 = 39FC
+	Iterating with 39FC / 72755C82 = 538A
+	Iterating with 538A / 5A20EFAC = 5B46
+	Iterating with 5B46 / 5A202642 = E307
+	Iterating with E307 / 26425D57 = C020
+	Iterating with C020 / 906C9570 = 6616
+	Iterating with 6616 / CF851192 = 1179
+	Iterating with 1179 / 69A7A92C = 590B
+	Iterating with 590B / 18304E45 = 7580
+	Iterating with 7580 / 12671267 = 95D9
+	Iterating with 95D9 / D37C4D80 = 574C
+	Iterating with 574C / 1F9532A2 = F918
+	Iterating with F918 / 46278B3C = AD8E
+	Iterating with AD8E / 8040D755 = D2D4
+	Iterating with D2D4 / 6F621F77 = A3F1
+	Iterating with A3F1 / D08C4B90 = 5624
+	Iterating with 5624 / 1EA53522 = E758
+	Iterating with E758 / 4437824C = B5EF
+	Iterating with B5EF / 8150D565 = DFC7
+	Iterating with DFC7 / 60721A87 = D751
+	Iterating with D751 / DA9C49A0 = 6E17
+	Iterating with 6E17 / 19253832 = 2649
+	Iterating with 2649 / 4E47825C = F4FA
+	Iterating with F4FA / 8260D375 = E6D3
+	Iterating with E6D3 / 6D821F97 = 8970
+	Iterating with 8970 / D2AC4620 = B78B
+	Iterating with B78B / 1B353042 = 54E5
+	Iterating with 54E5 / 47578F6C = E5FF
+	Iterating with E5FF / 8F70D085 = A840
+	Iterating with A840 / 6B921EA7 = 3304
+	Iterating with 3304 / D52C4430 = A766
+	Iterating with A766 / 12453152 = 07E4
+	Iterating with 07E4 / 4567807C = 40A4
+	Iterating with 40A4 / 8A80DA95 = 9211
+	Iterating with 9211 / D83C1927 = F77B
+	Iterating with F77B / 4E404E40 = 46F6
+	Iterating with 46F6 / 12553262 = F7DB
+	Iterating with F7DB / 43778D8C = 056E
+	Iterating with 056E / D2A5D2A5 = DD70
+	Iterating with DD70 / 66221B37 = 6A51
+	Iterating with 6A51 / D04C4750 = 8209
+	Iterating with 8209 / 1F653F72 = 6FFF
+	Iterating with 6FFF / 40878B9C = C37E
+	Iterating with C37E / 8EA0D525 = FF66
+	Iterating with FF66 / 64321247 = 25DF
+	Iterating with 25DF / D15C4560 = BCC5
+	Iterating with BCC5 / 10753A82 = 0025
+	Iterating with 0025 / 4A9789AC = 5284
+	Iterating with 5284 / 8920D835 = 8E70
+	Iterating with 8E70 / 6E421257 = A2CD
+	Iterating with A2CD / D26C4370 = 89F4
+	Iterating with 89F4 / 1D853F92 = 948F
+	Iterating with 948F / 42A7862C = 1B73
+	Iterating with 1B73 / D045D045 = 0523
+	Iterating with 0523 / 6752DF7C = C2D1
+	Iterating with C2D1 / DF7C4080 = 7B16
+	Iterating with 7B16 / 1B953EA2 = ACAE
+	Iterating with ACAE / 4527843C = A46B
+	Iterating with A46B / 8240D155 = A4D4
+	Iterating with A4D4 / 65621077 = F4D4
+	Iterating with F4D4 / 4A904A90 = A046
+	Iterating with A046 / 19A54837 = 2721
+	Iterating with 2721 / 48378E4C = 71EA
+	Iterating with 71EA / 8250D265 = F502
+	Iterating with F502 / 63721D87 = 634F
+	Iterating with 634F / DF9C42A0 = 75D9
+	Iterating with 75D9 / 16253B32 = 7C4E
+	Iterating with 7C4E / 875C875C = C1D9
+	Iterating with C1D9 / 8F60DF75 = 3C06
+	Iterating with 3C06 / 60821B97 = F022
+	Iterating with F022 / DEAC4520 = B139
+	Final result: B139
+LaboonCrypt hash: B139
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20028) $ java LaboonHash "boo"
+LaboonHash hash = 0102
+
+[laboon@ekaterina ~/pitt/pitt_private/CS1699_deliverable_3]
+(20029) $ java LaboonCrypt "boo"
+LaboonCrypt hash: AE26
