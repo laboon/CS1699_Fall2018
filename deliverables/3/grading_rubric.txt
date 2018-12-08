@@ -4,7 +4,7 @@ Partial credit possible for each
 
 LaboonHash:
 
-(30) LaboonHash provides correct output for sample "no more mr. nice guy..." ():
+(30) LaboonHash provides correct output for sample "no more mr. nice guy..." (5308):
 
 (5) LaboonHash provides correct output for "merry halloween" (07CB):
 
