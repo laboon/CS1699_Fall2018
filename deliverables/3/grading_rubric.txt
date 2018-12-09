@@ -8,7 +8,7 @@ LaboonHash:
 
 (5) LaboonHash provides correct output for "merry halloween" (07CB):
 
-(5) LaboonHash provides correct output for "" (1AB0):
+(5) LaboonHash provides correct output for "" (1AB0 OR 1311):
 
 (5) LaboonHash provides correct output for "boo" (0102):
 
@@ -20,7 +20,7 @@ LaboonCrypt:
 
 (5) LaboonCrypt provides correct output for "merry halloween" (B139):
 
-(5) LaboonCrypt provides correct output for "" (5BBF):
+(5) LaboonCrypt provides correct output for "" (5BBF OR D62C):
 
 (5) LaboonCrypt provides correct output for "boo" (AE26):
 
